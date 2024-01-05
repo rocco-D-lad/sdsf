@@ -1,0 +1,79 @@
+{
+  "name": "sdsf-build",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.7",
+    "axios": "^0.27.2",
+    "moment": "^2.30.1",
+    "node-sass": "^7.0.3",
+    "normalize.css": "^8.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.1.3",
+    "react-router-dom": "^6.21.1",
+    "react-scripts": "^5.0.1",
+    "sass": "^1.69.7",
+    "web-vitals": "^1.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "preinstall": "npx only-allow pnpm",
+    "tuyang-upgrade": "pnpm i tuyang-mapv3d@latest tuyang-scene@latest tuyang-components@latest  tuyang-shared@latest  tuyang-iot@latest"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "homepage": ".",
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^8.10.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-prettier": "^3.4.1",
+    "eslint-plugin-react": "^7.33.2",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.6",
+    "prettier": "^2.8.8",
+    "tuyang-components": "^0.4.51",
+    "tuyang-iot": "^0.4.51",
+    "tuyang-mapv3d": "^0.4.51",
+    "tuyang-scene": "^0.4.51",
+    "tuyang-shared": "^0.4.51"
+  },
+  "lint-staged": {
+    "*.{js,json,yml,yaml,css,scss,ts,tsx,md}": [
+      "eslint --fix",
+      "prettier --write --ignore-unknown"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "engines": {
+    "node": "16.x"
+  }
+}

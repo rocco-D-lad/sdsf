@@ -1,0 +1,197 @@
+@use 'sass:math';
+
+// 设计稿的实际宽高
+$layoutWidth: 2560;
+$layoutHeight: 1080;
+
+/// 单位移除
+/// @param {Number} $number - 需要移除单位的
+/// @return {Number} - 无单位的数字
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return math.div($number, ($number * 0 + 1));
+  }
+
+  @return $number;
+}
+
+@function px2vw($px) {
+  $px_number: strip-unit($px);
+  @return math.div($px_number, $layoutWidth) * 1vw * 100;
+}
+
+@function px2vh($px) {
+  $px_number: strip-unit($px);
+  @return math.div($px_number, $layoutHeight) * 1vh * 100;
+}
+
+@function px2vmin($px) {
+  $px_number: strip-unit($px);
+  @return math.div($px_number, $layoutHeight) * 1vmin * 100;
+}
+
+@mixin rotate($name, $time, $delay: 0s) {
+  animation: $name $time linear $delay infinite forwards;
+  @keyframes #{$name} {
+    0% {
+      transform: translateX(-50%) rotateY(0deg);
+    }
+    100% {
+      transform: translateX(-50%) rotateY(360deg);
+    }
+  }
+}
+
+@mixin rotateInCenter($name, $time: 2s, $delay: 0s) {
+  animation: $name $time linear $delay infinite forwards;
+  @keyframes #{$name} {
+    0% {
+      transform: translate(-50%, -50%) rotateZ(0deg);
+    }
+
+    100% {
+      transform: translate(-50%, -50%) rotateZ(360deg);
+    }
+  }
+}
+
+@mixin scale($name, $time: 1s, $delay: 0s) {
+  animation: $name $time linear $delay infinite forwards;
+  @keyframes #{$name} {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.1);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+}
+
+//不被选中
+@mixin notSelect() {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+$theme-color: #47fbff;
+
+// 滚动条
+@mixin scrollbar($width) {
+  &::-webkit-scrollbar {
+    width: px2vw($width);
+    height: 5px;
+    border-radius: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 5px;
+    height: 260px;
+    width: $width;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $theme-color;
+    border-radius: 5px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: $theme-color;
+  }
+}
+
+// 单行文本溢出显示省略号
+@mixin text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin text-shadow {
+  text-shadow: 1px px2vw(5px) px2vh(16px) #ffffff;
+}
+
+@mixin bg-size {
+  background-size: 100% 100%;
+}
+
+@mixin position-center($width, $height) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: px2vw($width);
+  height: px2vw($height);
+  transform: translate(-50%, -50%);
+}
+
+@mixin model-scrollbar {
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgb(0 0 0 / 20%);
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgb(0 0 0 / 20%);
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.1);
+  }
+}
+// 单行文本的溢出显示省略号
+// @param [$width] number 容器的宽度，必须
+@mixin text_overflow_single($width) {
+  width: $width;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 多行文本溢出显示省略号
+// @param [$width] number 容器的宽度，必须
+// @param [$line] number 指定超出多少行显示省略号。默认是1行。
+@mixin text_overflow_multiple($width, $line: 1) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  overflow: hidden;
+}
+
+// animate属性备忘
+@mixin animate($name, $start, $end, $time, $delay) {
+  // animation-name
+  // animation-duration
+  // animation-timing-function linear/ease/ease-in/ease-out/ease-in-out/cubic-bezier(n,n,n,n)
+  // animation-delay
+  // animation-fill-mode 属性规定动画在播放之前或之后，其动画效果是否可见。
+  //                      none |
+  //                      forwards (当动画完成后，保持最后一个属性值（在最后一个关键帧中定义）) |
+  //                      backwards(在 animation-delay 所指定的一段时间内，在动画显示之前，应用开始属性值（在第一个关键帧中定义）) |
+  //                      both    向前和向后填充模式都被应用。
+  // animation-iteration-count    infinite/具体次数
+  // animation-direction          normal(默认值。动画应该正常播放)/alternate(动画应该轮流反向播放)
+  // animation-play-state 属性规定动画正在运行还是暂停。注释：您可以在 JavaScript 中使用该属性，这样就能在播放过程中暂停动画。
+  animation: $name $time ease-in forwards;
+  @keyframes #{$name} {
+    0% {
+      opacity: $start;
+    }
+    100% {
+      opacity: $end;
+    }
+  }
+}
+
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} ;
