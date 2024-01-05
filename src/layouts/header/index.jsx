@@ -1,48 +1,47 @@
 import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
-const Dropdown = () => {
-  const [showDropdown, setShowDropdown] = useState(false);
+const DateRangePicker = () => {
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
 
-  const toggleDropdown = () => {
-    setShowDropdown(!showDropdown);
+  const handleStartDateChange = (date) => {
+    setStartDate(date);
   };
 
-  const handleItemClick = (item) => {
-    // 处理点击下拉列表项的逻辑
-    console.log(`Clicked on ${item}`);
-    // 这里可以根据需要进行其他操作
+  const handleEndDateChange = (date) => {
+    setEndDate(date);
   };
 
   return (
     <div>
-      <img
-        src="path/to/your/image.jpg"
-        alt="Dropdown Trigger"
-        style={{ cursor: 'pointer',transform: showDropdown ? 'rotate(90deg)' : 'rotate(0deg)'  }}
-        onClick={toggleDropdown}
-      />
-
-      {showDropdown && (
-        <div style={{ position: 'absolute', top: '50px', left: '0', border: '1px solid #ccc' }}>
-          <ul style={{position:'absolute',top:'100px'}}>
-            <li onClick={() => handleItemClick('Item 1')}>Item 1</li>
-            <li onClick={() => handleItemClick('Item 2')}>Item 2</li>
-            <li onClick={() => handleItemClick('Item 3')}>Item 3</li>
-            {/* Add more items as needed */}
-          </ul>
-        </div>
-      )}
+      <h1>Date Range Picker</h1>
+      <div>
+        <label>Start Date:</label>
+        <DatePicker
+          selected={startDate}
+          onChange={handleStartDateChange}
+          selectsStart
+          startDate={startDate}
+          endDate={endDate}
+          placeholderText="Select start date"
+        />
+      </div>
+      <div>
+        <label>End Date:</label>
+        <DatePicker
+          selected={endDate}
+          onChange={handleEndDateChange}
+          selectsEnd
+          startDate={startDate}
+          endDate={endDate}
+          minDate={startDate}
+          placeholderText="Select end date"
+        />
+      </div>
     </div>
   );
 };
 
-const App = () => {
-  return (
-    <div>
-      <h1>React Dropdown Example</h1>
-      <Dropdown />
-    </div>
-  );
-};
-
-export default App;
+export default DateRangePicker;

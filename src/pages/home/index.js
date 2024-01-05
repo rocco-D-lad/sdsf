@@ -5,6 +5,8 @@ import { utils } from 'tuyang-shared'
 import { api } from '../../api/config'
 import './index.scss'
 import moment from 'moment/moment'
+import Datetime from 'react-datetime'
+import 'react-datetime/css/react-datetime.css'
 
 const EventBus = utils.EventBus
 
@@ -18,6 +20,12 @@ const Home = () => {
   const [iotFooterVisible, setIotFooterVisible] = useState(false)
   const [timeNow, setTime] = useState({ date: '', week: '', time: '' })
   const [showDropdown, setShowDropdown] = useState(false)
+  const [similarity, setSimilarity] = useState(0)
+
+  const handleSimilarityChange = (event) => {
+    const value = event.target.value
+    setSimilarity(value)
+  }
 
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown)
@@ -169,12 +177,14 @@ const Home = () => {
                       <button
                         onClick={() => handleTabChange('tab1')}
                         className="tab-list"
+                        style={{ cursor: 'pointer' }}
                       >
                         列表
                       </button>
                       <button
                         onClick={() => handleTabChange('tab2')}
                         className="tab-Collect"
+                        style={{ cursor: 'pointer' }}
                       >
                         收藏
                       </button>
@@ -192,18 +202,61 @@ const Home = () => {
                           <p>
                             <div>
                               <p
-                                className='dropdown-img'
-                                style={{cursor: 'pointer',transform: showDropdown? 'rotate(90deg)': 'rotate(0deg)'}}
+                                className="dropdown-img"
+                                style={{
+                                  cursor: 'pointer',
+                                  transform: showDropdown
+                                    ? 'rotate(90deg)'
+                                    : 'rotate(0deg)'
+                                }}
                                 onClick={toggleDropdown}
                               />
-                              <p className='dropdown-list'>山东师范大学（105）</p>
+                              <p className="dropdown-list">
+                                山东师范大学（105）
+                              </p>
                               {showDropdown && (
-                                <div style={{position: 'absolute',top: '50px',left: '40px',border: '1px solid #ccc'}}
+                                <div
+                                  style={{
+                                    position: 'absolute',
+                                    top: '50px',
+                                    left: '40px',
+                                    border: '1px solid #ccc'
+                                  }}
                                 >
-                                  <ul style={{position: 'absolute',top: '10px'}} className='outdoor' >
-                                    <li onClick={() => handleItemClick('Item 1')} className='outdoor1'><p className='list-collegiate' style={{cursor: 'pointer',transform: showDropdown? 'rotate(90deg)': 'rotate(0deg)'}}></p>室外(46)</li>
-                                    <li onClick={() => handleItemClick('Item 2')}><p className='list-collegiate'></p>室内（45）</li>
-                                    <li onClick={() => handleItemClick('Item 3')}><p className='list-collegiate'></p>理科教学楼c座（14）</li>
+                                  <ul
+                                    style={{
+                                      position: 'absolute',
+                                      top: '10px'
+                                    }}
+                                    className="outdoor"
+                                  >
+                                    <li
+                                      onClick={() => handleItemClick('Item 1')}
+                                      className="outdoor1"
+                                    >
+                                      <p
+                                        className="list-collegiate"
+                                        style={{
+                                          cursor: 'pointer',
+                                          transform: showDropdown
+                                            ? 'rotate(90deg)'
+                                            : 'rotate(0deg)'
+                                        }}
+                                      ></p>
+                                      室外(46)
+                                    </li>
+                                    <li
+                                      onClick={() => handleItemClick('Item 2')}
+                                    >
+                                      <p className="list-collegiate"></p>
+                                      室内（45）
+                                    </li>
+                                    <li
+                                      onClick={() => handleItemClick('Item 3')}
+                                    >
+                                      <p className="list-collegiate"></p>
+                                      理科教学楼c座（14）
+                                    </li>
                                   </ul>
                                 </div>
                               )}
@@ -223,9 +276,113 @@ const Home = () => {
               </div>
             </div>
             <div className="round-left-bottom">
-              <p className="round-left-imgs"></p>
-              <p className="round-left-font">视asdlojazsdjki</p>
-              <div className="round-Controls"></div>
+              <p className="round-left-imgs">
+                <p className="round-left-font">视频巡逻</p>
+              </p>
+              <div className="round-Controls">
+                <div className="Controls-header">
+                  <p className="Controls-Serial">序号</p>
+                  <p className="Controls-route">路线</p>
+                  <p className="Controls-Controls">操作</p>
+                </div>
+                <div className="rounds-inspect">
+                  <p className="inspect-one">
+                    <p className="img"></p>
+                    <p className="Controls-Seriall">1</p>
+                    <p className="Controls-routel">老院区巡查2</p>
+                    <p className="Controls-Controlss">查看</p>
+                  </p>
+                  <p className="inspect-one">
+                    <p className="img"></p>
+                    <p className="Controls-Seriall">1</p>
+                    <p className="Controls-routel">老院区巡查2</p>
+                    <p className="Controls-Controlss">查看</p>
+                  </p>
+                  <p className="inspect-one">
+                    <p className="img"></p>
+                    <p className="Controls-Seriall">1</p>
+                    <p className="Controls-routel">老院区巡查2</p>
+                    <p className="Controls-Controlss">查看</p>
+                  </p>
+                  <p className="inspect-one">
+                    <p className="img"></p>
+                    <p className="Controls-Seriall">1</p>
+                    <p className="Controls-routel">老院区巡查2</p>
+                    <p className="Controls-Controlss">查看</p>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="round-right">
+            <div className="one">
+              <div className="round-left-top">
+                <p className="round-left-img"></p>
+                <p className="round-left-font">人脸轨迹</p>
+              </div>
+              <div className="round-left-header">
+                <p className="hunt-down"></p>
+                <div className="down-input">
+                  <div>
+                    <p
+                      style={{ marginTop: '10px', color: 'white' }}
+                      className="similarity"
+                    >
+                      相似度: {similarity}%
+                    </p>
+                    <input
+                      type="range"
+                      min="0"
+                      max="100"
+                      // step="1"
+                      value={similarity}
+                      onChange={handleSimilarityChange}
+                      style={{ width: '80%' }}
+                    />
+                  </div>
+                  <div>
+                    <div className="calendar">
+                      <h3 className="initiate">开始时间</h3>
+                      <Datetime />
+                      <h3 className="initiate">结束时间</h3>
+                      <Datetime />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="two">
+              <div className="round-left-top">
+                <p className="round-left-img"></p>
+                <p className="round-left-font">人脸轨迹</p>
+              </div>
+              <div className="round-left-header">
+                <div>
+                  <div className="alarm-picture"></div>
+                  <div className="cause-alarm">
+                    <ul className='cause-alarm'>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="there">
+              <div className="round-left-top">
+                <p className="round-left-img"></p>
+                <p className="round-left-font">人脸轨迹</p>
+              </div>
+              <div className="round-left-header"></div>
+            </div>
+            <div className="four">
+              <div className="round-left-top">
+                <p className="round-left-img"></p>
+                <p className="round-left-font">人脸轨迹</p>
+              </div>
+              <div className="round-left-header"></div>
             </div>
           </div>
         </div>
