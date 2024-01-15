@@ -1,15 +1,15 @@
 @import '../../assets/styles/utils.scss';
 
 #background-max {
-  // width: px2vmin(2564px);
-  // height: px2vmin(1057px);
+  // width: px2vmin(2560px);
+  // height: px2vmin(1080px);
   // width: 100%;
   // height: 100%;
   // overflow: hidden;
   #background-img {
     width: 100%;
     height: 100%;
-    // background: url(../../assets//styles//images/img_d.png) no-repeat;
+    background: url(../../assets//styles//images/img_d.png) no-repeat;
     background-size: 100%;
     position: relative;
     pointer-events: none; //可以滑动地图
@@ -75,8 +75,8 @@ p {
   width: 100%;
   height: 100%;
   position: absolute;
-  // background: url(../../assets/styles/images/title_d.png) center center
-    // no-repeat;
+  background: url(../../assets/styles/images/title_d.png) center center
+    no-repeat;
   background-size: 100%;
   // background-color: aqua;
   bottom: px2vmin(1px);

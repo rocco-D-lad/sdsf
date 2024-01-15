@@ -10,23 +10,24 @@ import BaojingPie from './component/EchartsData'
 import Shebei from './component/shebei'
 import Jiankong from './component/jiankong'
 import Xunluo from './component/xunluo'
-// import Guiji from './component/guiji'
-// import Baojing from './component/baojing'
 import Searchs from './component/Search'
 import Photograph from './component/photograph'
-import './index.scss'
-import 'react-datetime/css/react-datetime.css'
-import '../../assets/styles/utils.scss'
-import 'antd/dist/antd.css'
-
-// import Details from './component/details'
 import ModalData from './component/caputre/modaldata'
 import { BaoJing } from '../../api/home'
 import { Qitian, Yitian } from '../../api/home'
 import Medikits from '../../layouts/ToolBox/index'
+// import FaceRetrieval from './component/faceRetrieval'
 import MapContainer from '../../components/MapContainer'
 import zhCN from 'antd/es/date-picker/locale/zh_CN';
 import 'moment/locale/zh-cn';
+import dayjs from 'dayjs';
+import './index.scss'
+import 'react-datetime/css/react-datetime.css'
+import '../../assets/styles/utils.scss'
+import 'antd/dist/antd.css'
+import { message } from 'antd'
+
+
 
 moment.locale('zh-cn');
 
@@ -45,20 +46,20 @@ const Home = () => {
   const [activeTabs, setActiveTabs] = useState('tab1')
   const [apparatu, setApparatu] = useState(false)
   const [similarity, setSimilarity] = useState(80)
-  const [startdata, setStartData] = useState('')
-  const [enddata, setEndData] = useState('')
   // const [face, setFace] = useState(false)
+  const [locale, setLocale] = useState('zh') // 设置语言为中文
   const [caputre, setCaputre] = useState(false)
   const [analarm, setAnalarm] = useState([])
   const [trajectory, setTrajectory] = useState(false)
   const [qitian, setQitian] = useState([])
   const [selectedRow, setSelectedRow] = useState(null)
   const [imgSrc, setImgSrc] = useState(null)
-
   const [tag, setTag] = useState('7')
   const [tags, setTags] = useState({})
   const [selectedDate, setSelectedDate] = useState(null)
-  const [locale, setLocale] = useState('zh') // 设置语言为中文
+  const [startDate, setStartDate] = useState(null);  
+  const [endDate, setEndDate] = useState(null);  
+  const [isEndDateDisabled, setIsEndDateDisabled] = useState(false);  
 
   //报警列表
   const alarmlist = () => {
@@ -79,22 +80,24 @@ const Home = () => {
     const value = event.target.value
     setSimilarity(value)
   }
-  const timeStart = (data, da) => {
-    setStartData(data)
+  const handleStartDateChange = (date, da) => {
+    setStartDate(date)
+    // setIsEndDateDisabled(date && new Date(date) < new Date(endDate)); // 禁用结束日期选择器如果开始日期早于当前选定的结束日期
+    console.log('da', da)
+    console.log('new Date(date)', new Date(date))
+    console.log('new Date(endDates)', new Date(startDate))
+  }
+  const handleEndDateChange = (date, da) => {
+    // setIsEndDateDisabled(date && new Date(date) < new Date(endDate));
+    if(new Date(date) < new Date(startDate)){
+      console.log(new Date(startDate),'new Date(startDate)')
+      message.info('结束时间不能小于开始时间')
+      return
+    }
+    setEndDate(date)
 
-    console.log('da', da)
-    console.log('timeStart', data)
-  }
-  const timeEnd = (data, da) => {
-    setEndData(data)
-    console.log('da', da)
-    // if (date && date >= startDate) {
-    //   setEndDate(date);
-    // } else {
-    //   setEndDate(null); // 或显示警告/提示给用户
-    // }
-    // console.log('timeEnd',data)
-  }
+    console.log('da', date,da)
+  }  
 
   // const fn= ()=>{
   //   const data= [
@@ -169,12 +172,6 @@ const Home = () => {
   const onBack = () => {
     setCaputre(false)
   }
-  // const onofce = () => {
-  //   setFace(true)
-  // }
-  // const onCancel = () => {
-  //   setFace(false)
-  // }
   const measurement = (tab) => {
     setActiveTabs(tab)
   }
@@ -209,7 +206,6 @@ const Home = () => {
     EventBus.on('scene_change', (payload) => {})
   }, [])
 
-  let min = moment().format('YYYY-MM-DD')
   const onEchartsData = () => {
     var chartDom = document.getElementById('mainEcharts')
     var myChart = echarts.init(chartDom)
@@ -302,6 +298,8 @@ const Home = () => {
     // 设置基础空间数据库的接口地址
     api.setUrl(config.api)
 
+    apiInterface = api
+
     // 设置 DIS 平台的接口地址
     // api.dis.setUrl(config.dis);
 
@@ -319,6 +317,7 @@ const Home = () => {
     // messageController.dispatch({
     //   type: 0x00000000
     // });
+
   }, [])
 
   // 切换功能模块
@@ -379,6 +378,9 @@ const Home = () => {
   return (
     <>
       {render}
+      {
+
+      }
       <div id="background-max">
         <div id="background-img">
           <div id="header">
@@ -421,7 +423,7 @@ const Home = () => {
               <div className="round-right-guiji">
                 {/* 人脸轨迹 */}
                 {/* <Guiji></Guiji> */}
-
+                {/* <FaceRetrieval></FaceRetrieval> */}
                 <div className="one">
                   <div className="round-left-top">
                     <p className="round-left-img"></p>
@@ -460,9 +462,13 @@ const Home = () => {
                             <DatePicker
                               className="datepicker-left"
                               placeholder="开始时间"
-                              value={startdata}
-                              onChange={timeStart}
+                              value={startDate}
+                              // showTime={{
+                              //   defaultValue: dayjs('00:00:00', 'HH:mm:ss'),
+                              // }}
+                              onChange={handleStartDateChange}
                               locale={zhCN}
+                              selected={startDate}  
                               // suffixIcon={<CaretDownOutlined/>}
                             />
                           </div>
@@ -471,10 +477,14 @@ const Home = () => {
                             <DatePicker
                               className="datepicker-right"
                               placeholder="结束时间"
-                              value={enddata}
-                              onChange={timeEnd}
-                              selected={selectedDate}
+                              value={endDate}
+                              // showTime={{
+                              //   defaultValue: dayjs('00:00:00', 'HH:mm:ss'),
+                              // }}
+                              onChange={handleEndDateChange}
                               locale={zhCN}
+                              selected={endDate}  
+                              disabled={isEndDateDisabled} // 禁用结束日期选择器如果开始日期早于当前选定的结束日期  
                               // locale={locale}
                               // disabledDate={disableData}
                             />

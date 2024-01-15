@@ -1,0 +1,815 @@
+@use 'sass:math';
+// @import "../../assets/styles/utils.scss";
+@import "../../../../assets/styles/utils.scss";
+@mixin img-style {
+  width: px2vmin(54);
+  height: px2vmin(50);
+  margin-top: px2vmin(9);
+}
+
+#faceRetrieval {
+  position: absolute;
+  left: 2%;
+  top: 8%;
+  height: px2vmin(927);
+  width: px2vmin(423);
+  //border-radius: px2vmin(10);
+  //padding: px2vmin(20) 0 0 px2vmin(16);
+  background: url("../../assets/img/header/box_left.png") center center no-repeat;
+  background-size: 100% 100%;
+
+  .title-primary {
+    width: 273px;
+    height: 28px;
+    background: url("../../assets/img/Cookit/title_mk_left.png") center center no-repeat;
+    background-size: 100% 100%;
+    font-size: 20px;
+    font-family: YouSheBiaoTiHei;
+    margin-top: 28px;
+    font-weight: 400;
+    color: #F1FEFF;
+    line-height: 28px;
+    padding-left: 22px;
+    margin-left: 108px;
+  }
+
+  .tab-buttons {
+    width: 260px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 84px;
+    margin-top: 22px;
+
+    .btnoff {
+      width: 80px;
+      height: 30px;
+      background: url("../../assets/img/Cookit/btn_jk_default.png") center center no-repeat;
+      border-radius: 3px 3px 3px 3px;
+      opacity: 1;
+      // margin-right: 28px;
+      font-size: 14px;
+      font-family: Microsoft YaHei-Regular, Microsoft YaHei;
+      font-weight: 400;
+      border: 0;
+      color: #E6E6E6;
+      cursor: pointer;
+    }
+
+    .active {
+      width: 80px;
+      height: 30px;
+      background: url("../../assets/img/Cookit/btn_jk_sele.png") center center no-repeat;
+      border-radius: 3px 3px 3px 3px;
+      opacity: 1;
+      // margin-right: 28px;
+      border: 0;
+      font-size: 14px;
+      font-family: Microsoft YaHei-Regular, Microsoft YaHei;
+      font-weight: 400;
+      color: #E6E6E6;
+      cursor: pointer;
+    }
+  }
+
+  .rljs {
+    .SearchCriteria {
+      margin-top: 24px;
+      margin-left: 84px;
+      display: flex;
+
+      .UploadImg {
+        width: 100px;
+        height: 100px;
+
+        .uploaded-img {
+          width: 100px;
+          height: 100px;
+          border: 1px solid #FFF;
+        }
+        .uploaded_img_empty{
+          width: 100px;
+          height: 100px;
+          background: url('../../assets/img/Cookit/img_nopic.png') no-repeat;
+          background-size: 100% 100%;
+        }
+        .shangchuan {
+          display: inline-block;
+          width: 100px;
+          height: 100px;
+          position: absolute;
+          cursor: pointer;
+        }
+      }
+
+      .SearchRight {
+        margin-left: 8px;
+        color: #FFFFFF;
+
+        .personId{
+          width: 245px;
+          height: 28px;
+          position: relative;
+          top: -5px;
+          // left: 5px;
+          background: url("../../assets/img/Cookit/Rectangle049.png") center center no-repeat;
+          color: white;
+        }
+        .personId::placeholder {
+          font-size: 14px;
+          font-family: Microsoft YaHei-Regular, Microsoft YaHei;
+          font-weight: 400;
+          color: rgba(255,255,255,0.8);
+        }
+        .startTime {
+          width: 245px;
+          height: 30px;
+          background: rgba(7, 26, 48, 0.58);
+          border-radius: 0px 0px 0px 0px;
+          opacity: 1;
+          font-size: 14px;
+          font-family: Microsoft YaHei-Regular, Microsoft YaHei;
+          font-weight: 400;
+          color: rgba(255, 255, 255, 0.8);
+          line-height: 16px;
+          margin-bottom: 5px;
+        }
+
+        .startTime .ant-picker-input>input::placeholder {
+          color: #ccc;
+          font-size: 14px;
+        }
+
+        :where(.css-dev-only-do-not-override-pr0fja).ant-picker .ant-picker-input>input {
+          color: #FFFFFF !important;
+        }
+
+        .ant-picker-suffix {
+          color: #4F96EA !important;
+        }
+
+        .Numberinput {
+          width: 180px;
+          height: 30px;
+          margin-left: 7px;
+          background: rgba(7, 26, 48, 0.58);
+
+          input {
+            color: #FFFFFF;
+          }
+        }
+      }
+
+    }
+
+    .sousuo {
+      margin-top: 16px;
+      margin-left: 84px;
+      width: 350px;
+      height: 30px;
+      background: url("../../assets/img/Cookit/btn_search2.png") center center no-repeat;
+      font-size: 14px;
+      font-family: Microsoft YaHei-Regular, Microsoft YaHei;
+      font-weight: 400;
+      color: #E6E6E6;
+      text-align: center;
+      cursor: pointer;
+      padding-left: 15px;
+      line-height: 30px;
+    }
+
+    .sousuoresult {
+      width: 362px;
+      height: 30px;
+      margin-top: 13px;
+      margin-left: 84px;
+      background: url("../../assets/img/Cookit/title_xllx.png") center center no-repeat;
+      font-size: 16px;
+      font-family: Microsoft YaHei-Regular, Microsoft YaHei;
+      font-weight: 400;
+      color: #7DFFFF;
+      text-align: center;
+      line-height: 30px;
+    }
+
+    .SSresult {
+      margin-top: 23px;
+      margin-left: 78px;
+
+      .suosuotitle {
+        width: 348px;
+        height: 25px;
+        padding-left: 16px;
+        border-bottom: #FFFFFF solid 1px;
+        font-size: 14px;
+        font-family: Microsoft YaHei-Regular, Microsoft YaHei;
+        font-weight: 400;
+        color: #FFFFFF;
+        line-height: 16px;
+        margin-bottom: 4px;
+        display: flex;
+        span{
+          flex: 1;
+          text-align: center;
+          padding-top: 4px;
+          padding-bottom: 4px;
+        }
+      }
+
+      .Ssend {
+        height: 533px;
+        width: 355px;
+        overflow-y: auto;
+        // display: flex;
+
+        .sSlist {
+          width: 348px;
+          height: 38px;
+          background: rgba(19, 79, 123, 0.64);
+          line-height: 38px;
+          color: #FFFFFF;
+          margin-bottom: 7px;
+          cursor: pointer;
+          display: flex;
+
+          // div:first-child {
+          //   padding-left: 25px;
+          // }
+          span{
+            flex: 1;
+            text-align: center;
+            padding-top: 4px;
+            padding-bottom: 4px;
+          }
+        }
+
+        .active {
+          width: 348px;
+          height: 38px;
+          background: #1fffff;
+          line-height: 38px;
+          color: #FFFFFF;
+          margin-bottom: 7px;
+          cursor: pointer;
+
+          div:first-child {
+            padding-left: 25px;
+          }
+        }
+      }
+
+    }
+  }
+
+  // 分页位置
+  .divPage {
+    position: fixed;
+    width: 442px;
+    height: 23px;
+    left: 160%;
+    top: 76%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    //background-color: rgba(42, 67, 87, 0.5);
+    padding: 10px;
+    color: white !important;
+    z-index: 22;
+  }
+
+  //人脸库
+  .renData {
+    position: absolute;
+    width: px2vmin(870px);
+    height: 682px;
+    top: 0px;
+    left: 450px;
+    background: url("../../assets/img/Cookit/img_rlk.png") center center no-repeat;
+    background-size: 100% 100%;
+
+    .renData_header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 20px;
+      background: rgba(40, 116, 206, 0.54);
+
+      h1 {
+        font-size: 18px;
+        font-family: Microsoft YaHei-Regular, Microsoft YaHei;
+        font-weight: 400;
+        color: #FFFFFF;
+        line-height: 21px;
+        margin: 0;
+      }
+
+      .cha {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        //padding: 6px;
+      }
+    }
+
+    .condition {
+      display: flex;
+      color: #FFFFFF;
+      padding: 8px 10px;
+      //border-bottom: 1px solid $theme-color;
+
+      input {
+        border: 0;
+        background: url("../../assets/img/Cookit/box_rlk1.png") center center no-repeat;
+        padding: 2px 0px;
+        border-radius: 5px;
+        width: 315px;
+        height: 27px;
+        //padding: 0 10px;
+        outline: 0;
+        //margin-right: 5px;
+      }
+
+      .seach_name {
+        //margin-right: 100px;
+        width: px2vmin(348px);
+        padding-left: px2vmin(10px);
+        input {
+          outline: none;
+          border: 0;
+          background-color: transparent;
+          color: #E8F3FF;
+          line-height: px2vmin(29px);
+          font-size: px2vmin(14px);
+          vertical-align: top;
+          width: calc(100% - #{px2vmin(24px)});
+          padding: px2vh(5) px2vw(5);
+          margin-bottom: px2vh(5);
+        }
+  
+        img {
+          width: px2vmin(24px);
+          height: px2vmin(24px);
+          float: right;
+          margin-top: 2px;
+        }
+      }
+
+      .search_button {
+        width: px2vw(80px);
+        height: px2vh(30);
+        line-height: px2vh(30);
+        color: $theme-color;
+        border-radius: 5px;
+        text-align: center;
+        cursor: pointer;
+        letter-spacing: 1px;
+        font-size: 18px;
+        border: 1px solid $theme-color;
+        @include notSelect;
+        margin: px2vh(30) 0 0 px2vw(50);
+      }
+    }
+
+    .dataList {
+
+      box-sizing: border-box;
+      height: calc(100% - #{px2vmin(190px)});
+      overflow-x: hidden !important;
+      overflow-y: auto !important;
+      margin: px2vmin(10) 0;
+
+      @include scrollbar(5);
+
+      // 人脸列表
+      .imgimg_face {
+        width: px2vmin(265px);
+        height: px2vmin(100px);
+        border-radius: 0 0 0 0;
+        opacity: 1;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        float: left;
+        margin-left: px2vmin(15px);
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+        img {
+          //min-width: px2vmin(80px);
+          width: px2vmin(80px);
+          //min-height: px2vmin(90px);
+          height: px2vmin(90px);
+          float: left;
+          margin-left: 4px;
+          margin-top: 4px;
+          cursor: pointer;
+          border: 1px solid white;
+          object-fit: contain;
+        }
+
+        .imgrightbox_face {
+          color: #fff;
+          font-size: px2vmin(14px);
+          .imgtext_face {
+            margin-left: 5px;
+            margin-top: 2px;
+
+            .imgname_face {
+              color: #9BFFFF;
+            }
+          }
+        }
+
+        .imgrightbox_catchface {
+          // float: left;
+          color: #fff;
+          font-size: px2vmin(14px);
+          padding-top: 5px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+
+          .imgtext_face {
+            margin-left: 5px;
+            margin-top: 5px;
+
+            .imgname_face {
+              color: #9BFFFF;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+    }
+
+    .faceListPage {
+      margin: px2vmin(5px);
+      box-sizing: border-box;
+    }
+  }
+
+  .faceDetailFold {
+    height: px2vmin(50px);
+    // width: px2vmin(769px);
+  }
+
+  .faceDetailUnFold {
+    height: px2vh(600px);
+    // width: px2vmin(769px);
+  }
+
+
+  .faceCapture {
+    background: url("../../assets/img/Cookit/box_rlgj1.png") center center no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    left: 450px;
+    overflow: hidden;
+
+    .renData_header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 20px;
+      background: rgba(40, 116, 206, 0.54);
+
+      h1 {
+        font-size: 18px;
+        font-family: Microsoft YaHei-Regular, Microsoft YaHei;
+        font-weight: 400;
+        color: #FFFFFF;
+        line-height: 21px;
+        margin: 0;
+      }
+      .iconRight{
+        .cha {
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+          //padding: 6px;
+        }
+  
+        .iconFold {
+          width: px2vmin(24px);
+          height: px2vmin(24px);
+          // float: right;
+          margin-right: px2vmin(30px);
+          cursor: pointer;
+          object-fit: cover;
+        }
+
+      }
+    
+    }
+    
+    .renData_electrol{
+      height: px2vh(30);
+      flex: .8;
+      color: white;
+      cursor: pointer;
+      .renData_xl{
+        background: url("../../assets/img/fenxiButtom.png") no-repeat;
+        background-size: 100% 100%;
+        width: px2vmin(91.56px);
+        height: px2vmin(28.89px);
+        line-height: px2vmin(26px);
+        font-size: 14px;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      // 巡逻中的div
+      .patrolsRuntime {
+        .patrols_runtime_container {
+          position: fixed;
+          width: px2vmin(372px);
+          top: px2vmin(8px);
+          // left: px2vmin(12px);
+          overflow: hidden;
+      
+          .runtime_container_toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: px2vmin(10px);
+      
+      
+            .patrols_runtime_btn_select {
+              background: url("../../assets/img/fenxiButton_checked.png") no-repeat;
+              background-size: 100% 100%;
+              color: #FFD233;
+            }
+      
+            .patrols_runtime_btn {
+              background: url("../../assets/img/fenxiButtom.png") no-repeat;
+              background-size: 100% 100%;
+              width: px2vmin(91.56px);
+              height: px2vmin(28.89px);
+              line-height: px2vmin(26px);
+              font-size: 14px;
+              color: white;
+              text-align: center;
+              cursor: pointer;
+            }
+      
+            .patrols_runtime_btn:hover {
+              background: url("../../assets/img/fenxiButton_checked.png") no-repeat;
+              background-size: 100% 100%;
+              color: #FFD233;
+            }
+          }
+      
+          .patrols_runtime_content {
+            //width: px2vmin(380px);
+            height: px2vmin(601px);
+            background: rgba(7, 16, 26, 0.65);
+            box-shadow: inset 0 0 px2vmin(10px) px2vmin(1px) #9DEDFF;
+            border-radius: 0 0 0 0;
+            border: 1px solid;
+            border-image: linear-gradient(328deg, rgba(38, 122, 170, 1), rgba(255, 255, 255, 0)) 1 1;
+      
+            .runtime_content_title {
+              $runtime_content_title_height: px2vmin(30px);
+              height: $runtime_content_title_height;
+              color: #9BFFFF;
+              font-size: px2vmin(18px);
+              line-height: $runtime_content_title_height;
+              padding-left: px2vmin(10px);
+      
+      
+              .runtime_content_title_circle {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: #9BFFFF;
+                display: inline-block;
+                margin-right: px2vmin(10px);
+              }
+      
+              .runtime_content_title_close {
+                width: px2vmin(20px);
+                height: px2vmin(20px);
+                margin: px2vmin(8px);
+                display: inline-block;
+                float: right;
+                background: url("../../assets/img/close.png") no-repeat;
+                background-size: 100% 100%;
+                cursor: pointer;
+              }
+            }
+      
+            .runtime_content_title_line {
+              height: px2vmin(3px);
+              background: url("../../assets/img/chartLine.png") no-repeat;
+              background-size: 100% 100%;
+              margin: 0 px2vmin(10px);
+              box-sizing: border-box;
+            }
+      
+            .runtime_content_body {
+              color: white;
+              padding: px2vmin(20px);
+      
+              .runtime_content_line {
+                margin-bottom: px2vmin(10px);
+      
+                .line_file_container {
+                  display: inline-block;
+                  cursor: pointer;
+      
+                  .line_file {
+                    width: px2vmin(100px);
+                    height: px2vmin(100px);
+                    background-color: rgb(255, 255, 255, 0.2);
+                    border-radius: 2px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+      
+                    .line_file_img {
+                      display: inline-block;
+                      width: px2vmin(50px);
+                      height: px2vmin(50px);
+                      background: url("../../assets/img/icon_djsc@2x.png") no-repeat;
+                      background-size: 100% 100%;
+                    }
+                  }
+                }
+      
+                &>span {
+                  min-width: px2vmin(100px);
+                  display: inline-block;
+                }
+      
+                input {
+                  background-color: rgb(255, 255, 255, 0.2);
+                  border-radius: 2px;
+                  min-width: px2vmin(200px);
+                  outline: none;
+                }
+      
+                textarea {
+                  background-color: rgb(255, 255, 255, 0.2);
+                  border-radius: 2px;
+                  min-width: px2vmin(200px);
+                  resize: none;
+                  outline: none;
+                  height: px2vmin(200px);
+                }
+      
+                button {
+                  width: 100%;
+                  height: px2vmin(30px);
+                  line-height: px2vmin(28px);
+                  box-sizing: border-box;
+                  background: url("../../assets/img/btn_baocun@2x.png") no-repeat;
+                  background-size: 100% 100%;
+                  outline: none;
+                  cursor: pointer;
+                  border: none;
+                }
+              }
+            }
+          }
+      
+        }
+      }
+
+
+
+
+   
+    }
+
+    .carCapturList {
+      margin-top: 12px;
+
+      .carCapturetitle {
+        width: 769px;
+        height: 25px;
+        padding-left: 16px;
+        border-bottom: #FFFFFF solid 1px;
+        font-size: 14px;
+        font-family: Microsoft YaHei-Regular, Microsoft YaHei;
+        font-weight: 400;
+        color: #FFFFFF;
+        line-height: 16px;
+        margin-bottom: 4px;
+      }
+
+      .carCapturesend {
+        height: px2vh(463px);
+        width: 769px;
+        @include scrollbar(2px);
+        overflow-y: auto;
+
+        .sSlist {
+          width: 767px;
+          height: 34px;
+          background: rgba(19, 79, 123, 0.64);
+          line-height: 38px;
+          color: #FFFFFF;
+          margin-bottom: 7px;
+          cursor: pointer;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+
+          div:first-child {
+            padding-left: 25px;
+          }
+
+          .carImg {
+            width: 30px;
+            height: 30px;
+            margin-top: -9px;
+          }
+
+          .carHFImg {
+            width: 24px;
+            height: 24px;
+            background: url("../../assets/img/Cookit/icon_play.png") center center no-repeat;
+            margin-top: 3px;
+            cursor: pointer;
+          }
+        }
+
+        .active {
+          width: 494px;
+          height: 34px;
+          background: #1fffff;
+          line-height: 38px;
+          color: #FFFFFF;
+          margin-bottom: 7px;
+          cursor: pointer;
+
+          div:first-child {
+            padding-left: 25px;
+          }
+        }
+      }
+    }
+    .faceSearch{
+      position: absolute;
+      right: px2vw(10);
+      width: px2vw(89);
+      height: px2vh(28);
+      margin-top: px2vh(10);
+      line-height: px2vh(28);
+      background: url('../../assets/img/btn_look.png') no-repeat;
+      background-size: 100% 100%;
+      cursor: pointer;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: px2vh(14px);
+    }
+  }
+
+  .tab-content {
+
+    .tabContent_camera {
+      margin: px2vh(20) 0 0 px2vw(84);
+    }
+  }
+
+
+}
+
+:where(.css-dev-only-do-not-override-pr0fja).ant-image .ant-image-mask {
+  display: none !important;
+}
+
+.Ssend::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.Ssend::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 5px rgb(0 0 0 / 20%);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.Ssend::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px rgb(0 0 0 / 20%);
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+
+@include antDatePicker();
+
+@include antEmpty();
+
+@include antPagination();
+
+@include antSwitch();
+
+@include antCheck();
+
+@include antButton();
+
+@include antMessage();
+
+@include antSpin();
+

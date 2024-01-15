@@ -1,7 +1,8 @@
-import { Modal, Pagination } from 'antd'
+import { Modal, Pagination,Select } from 'antd'
 import React, { useEffect, useState } from 'react'
 import './index.scss'
 import { Renlianzp } from '../../../../api/home'
+import { Api, hooks, utils } from 'tuyang-shared'
 const ModalData = (prop) => {
   const { setImgSrc } = prop || {}
   const [inputValue, setInputValue] = useState('')
@@ -11,6 +12,10 @@ const ModalData = (prop) => {
   const [photograph, setPhotograph] = useState([]) // 渲染数据
   const [photographtwo, setPhotographtwo] = useState([]) // 原始数据
   // const [isModalOpen, setIsModalOpen] = useState(false)
+  const options = [10, 20, 30, 40, 50]
+  const [current, setCurrent] = useState(1) // 当前页码
+  const [pageSize, setPageSize] = useState(10) // 每页显示的数据数量
+  const [total, setTotal] = useState(0) // 数据总数，根据实际情况进行计算或传递
   const [data] = useState([
     {
       id: 1,
@@ -58,7 +63,8 @@ const ModalData = (prop) => {
 
   const Zhaopian = () => {
     Renlianzp().then((res) => {
-      setPageData(res.data.data.slice(0, 15))
+      setPageData(res.data.data)
+      // setPageData(res.data.data.slice(0, 15))
       setPhotograph(res.data.data)
       setPhotographtwo(res.data.data)
       // console.log(res.data.data)
@@ -85,6 +91,8 @@ const ModalData = (prop) => {
     //   alert('只能输入中文');
     // }
   }
+
+  const { run: getFaceLib, cancel: getFaceLibCancel } = hooks.useRequest()
   const handleSearchClick = () => {
     if (inputValue === '') setPhotograph(photographtwo)
     if (!isDivVisible) return
@@ -92,17 +100,17 @@ const ModalData = (prop) => {
       return item.name.includes(inputValue)
     })
     setPhotograph(searchArr)
-    console.log(searchArr);
+    console.log(searchArr)
 
     // setSearchResult(data.filter((div) => div.content.includes(inputValue)))
     // setIsDivVisible(false)
   }
+  
 
   useEffect(() => {
     Zhaopian()
   }, [])
   return (
-
     <Modal
       title="抓拍库"
       open={prop.caputre}
@@ -158,7 +166,7 @@ const ModalData = (prop) => {
                     <span>性别&nbsp;:&nbsp;&nbsp;&nbsp;</span>
                     <span>
                       {/* {val.sex === 0 ? '女' : val.sex === 1 ? '男' : '未知'} */}
-                      {val.sex == 0 ? '女' : '男'}
+                      {/* {val.sex == 0 ? '女' : '男'} */}男
                     </span>
                   </div>
                   <div>
@@ -171,15 +179,28 @@ const ModalData = (prop) => {
         </div>
         <div>
           <Pagination
+            className="paging"
             defaultCurrent={1}
+            // defaultCurrent={libParam.pageNo}
+            // pageSize={libParam.pageSize}
             total={photograph.length}
             defaultPageSize={15}
-            className="paging"
             onChange={(e) => {
               console.log('e', e)
               setPageData(photograph.slice((e - 1) * 15, e * 15))
             }}
           />
+          <Select
+            defaultValue={pageSize}
+            style={{ width: 90 }}
+            onChange={setPageSize}
+          >
+            {options.map((value) => (
+              <Select.Option key={value} value={value}>
+                {value}
+              </Select.Option>
+            ))}
+          </Select>
         </div>
       </div>
     </Modal>

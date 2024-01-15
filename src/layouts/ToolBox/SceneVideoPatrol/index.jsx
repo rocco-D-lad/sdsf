@@ -477,8 +477,8 @@ export default function SceneVideoPatrol() {
     <div id='videoPatrol'>
       {
         xlStateRef.current === PatrolEnum.STOP ? <div className='patrol_container animate__animated animate__fadeInRight'>
-          {/* <img className='close' src={require('../../../assets/images/tool/second/icon_close2.png')} alt="" onClick={() => closeVideoPatrol()} /> */}
-          {/* <h6>视频巡逻</h6> */}
+          <img className='close' src={require('../../../assets/images/tool/second/icon_close2.png')} alt="" onClick={() => closeVideoPatrol()} />
+          <h6>视频巡逻</h6>
           <div className='patrolCard'>
             <ul className='patrolList'>
               {
