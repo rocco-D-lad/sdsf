@@ -1,0 +1,204 @@
+@import '../../../../assets/styles/utils.scss';
+
+.rounds-inspect::-webkit-scrollbar {
+    width: px2vmin(8px);
+    height: px2vmin(8px);
+    background-color: #02577c !important;
+  }
+  .rounds-inspect::-webkit-scrollbar-track {
+    background-color: #02577c !important;
+  }
+  .rounds-inspect::-webkit-scrollbar-thumb {
+    background-color: #27cbff !important;
+    border-radius: px2vmin(10px);
+  }
+
+.round-left-bottom {
+    width: px2vmin(463px);
+    height: px2vmin(304px);
+    position: absolute;
+    // background-color: pink;
+    // opacity: 1;
+    margin-top: px2vmin(490px);
+    margin-left: px2vmin(10px);
+    float: left;
+
+    .round-left-imgs {
+      width: px2vmin(484px);
+      height: px2vmin(31px);
+      position: absolute;
+      background: url(../../../../assets/styles/images/title_rlgj.png) no-repeat;
+      background-size: 100%;
+      opacity: 1000;
+
+      .round-left-font {
+        font-family: YouSheBiaoTiHei;
+        font-size: px2vmin(24px);
+        color: white;
+        padding-left: px2vmin(50px);
+        padding-top: px2vmin(1px);
+      }
+    }
+    .round-Controls {
+      width: px2vmin(463px);
+      height: px2vmin(237px);
+      background: url(../../../../assets/styles/images/box_3.png) center center
+        no-repeat;
+      background-size: 100%;
+      margin-top: px2vmin(50px);
+
+      .Controls-header {
+        width: px2vmin(438px);
+        height: px2vmin(39px);
+        background: url(../../../../assets/styles/images/title_spxl.png) center
+          center no-repeat;
+        background-size: 100%;
+        margin-left: px2vmin(12px);
+        display: flex;
+        // justify-content: center;
+        align-items: center;
+        padding-top: px2vmin(20px);
+
+        .Controls-Serial {
+          margin-left: px2vmin(26px);
+          font-size: px2vmin(16px);
+          color: white;
+          flex-grow: 1;
+        }
+
+        .Controls-route {
+          margin-left: px2vmin(109px);
+          font-size: px2vmin(16px);
+          color: white;
+          flex-grow: 1;
+        }
+
+        .Controls-Controls {
+          margin-left: px2vmin(109px);
+          font-size: px2vmin(16px);
+          color: white;
+          flex-grow: 1;
+        }
+      }
+
+      .rounds-inspect {
+        width: px2vmin(438px);
+        height: px2vmin(184px);
+        // background-color: #ffb660;
+        margin-top: px2vmin(10px);
+        overflow: scroll;
+        margin-left: px2vmin(12px);
+        scrollbar-width: none; /* firefox */
+        -ms-overflow-style: none; /* IE 10+ */
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        .rounds-inspect::-webkit-scrollbar {
+          display: none; /* Chrome Safari */
+        }
+        .inspect-one > p {
+          margin: 0;
+        }
+        .inspect-one:hover {
+          cursor: pointer;
+          width: px2vmin(438px);
+          height: px2vmin(46px);
+          background-color: #e9e9e9;
+          background: url(../../../../assets/styles/images/btn_look2.png) center
+            center no-repeat;
+          background-size: 100%;
+          display: flex;
+          align-items: center;
+          padding-top: px2vmin(20px);
+          position: relative;
+          .img {
+              width: px2vmin(12px);
+              position: absolute;
+              height: px2vmin(13px);
+              background: url(../../../../assets/styles/images/img_xz.png) center
+                center no-repeat;
+              background-size: 100%;
+            }
+        }
+        .inspect-one {
+          width: px2vmin(438px);
+          height: px2vmin(46px);
+          display: flex;
+          align-items: center;
+          padding-top: px2vmin(20px);
+          padding-bottom: px2vmin(20px);
+
+          .Controls-Seriall {
+            margin-left: px2vmin(34px);
+            color: white;
+            flex-grow: 1;
+          }
+
+          .Controls-routel {
+            margin-left: px2vmin(45px);
+            font-size: px2vmin(16px);
+            color: white;
+            flex-grow: 1;
+          }
+
+          .Controls-Controlss {
+            width: px2vmin(44px);
+            height: px2vmin(22px);
+            margin-right: px2vmin(26px);
+            text-align: center;
+            cursor: pointer;
+            color: white;
+            background: url(../../../../assets/styles/images/btn_look2.png) center
+              center no-repeat;
+            background-size: 100%;
+            font-size: px2vmin(12px);
+          }
+          .inspect-one:hover {
+            cursor: pointer;
+            width: px2vmin(438px);
+            height: px2vmin(46px);
+            background-color: #e9e9e9;
+            background: url(../../../../assets/styles/images/btn_look2.png) center
+              center no-repeat;
+            background-size: 100%;
+            display: flex;
+            align-items: center;
+            padding-top: px2vmin(20px);
+
+            .img {
+              width: px2vmin(12px);
+              position: absolute;
+              height: px2vmin(13px);
+              background: url(../../../../assets/styles/images/img_xz.png) center
+                center no-repeat;
+              background-size: 100%;
+            }
+
+            .Controls-Seriall {
+              margin-left: px2vmin(34px);
+              color: white;
+              flex-grow: 1;
+            }
+
+            .Controls-routel {
+              margin-left: px2vmin(45px);
+              font-size: px2vmin(16px);
+              color: white;
+              flex-grow: 1;
+            }
+
+            .Controls-Controlss {
+              width: px2vmin(44px);
+              height: px2vmin(22px);
+              margin-right: px2vmin(26px);
+              cursor: pointer;
+              color: white;
+              background: url(../../../../assets/styles/images/btn_look2.png) center
+                center no-repeat;
+              background-size: 100%;
+            }
+          }
+        }
+      }
+    }
+  }

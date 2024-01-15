@@ -1,0 +1,165 @@
+@import '../../../../assets/styles/utils.scss';
+
+#rocco-li {
+  #rocco {
+    width: px2vmin(388.5px);
+    height: px2vmin(370px);
+    // position: absolute;
+    background: url(../../../../assets/styles/images/pop_bjxq.png);
+    background-size: 100%;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    margin-top: px2vmin(270px);
+    pointer-events: all;
+    // margin-left: px2vmin(-710px);
+    // margin-top: px2vmin(-510px);
+    .information-header {
+      width: px2vmin(380px);
+      height: px2vmin(40px);
+      // border: 1px pink solid;
+      display: flex;
+      .header-text {
+        width: px2vmin(100px);
+        font-size: px2vmin(24px);
+        font-family: YouSheBiaoTiHei;
+        color: white;
+        margin-left: px2vmin(20px);
+        margin-top: px2vmin(-2px);
+      }
+      .header-img {
+        width: px2vmin(14px);
+        height: px2vmin(14px);
+        background: url(../../../../assets/styles/images/icon_x.png);
+        background-size: 100%;
+        position: relative;
+        margin-left: px2vmin(230px);
+        // margin-left: 178px;
+        margin-top: px2vmin(15px);
+        cursor: pointer;
+      }
+    }
+    .information-content {
+      width: px2vmin(370px);
+      height: px2vmin(125px);
+      // border: 1px yellow solid;
+      margin-top: 0 !important;
+      margin: px2vmin(10px);
+      display: flex;
+      .content-left {
+        width: px2vmin(120px);
+        height: px2vmin(120px);
+        background: url(../../../../assets/styles/images/img_tp_1.png) no-repeat;
+        background-size: 100%;
+        position: relative;
+        margin-top: px2vmin(2px);
+        .content-left-img {
+          width: px2vmin(74px);
+          height: px2vmin(74px);
+          position: relative;
+          background: url(../../../../assets/styles/images/icon_bj.png) center
+            center no-repeat;
+          background-image: 100%;
+          margin-left: px2vmin(19px);
+          top: px2vmin(16px);
+        }
+      }
+      .content-text {
+        width: px2vmin(250px);
+        height: px2vmin(108px);
+        // border: 1px red solid;
+
+        .context-text-ul {
+          // display: flex;
+          color: white;
+          font-size: px2vmin(14px);
+          font-weight: px2vmin(16.41px);
+          padding-left: px2vmin(10px) !important;
+        }
+      }
+    }
+    .information-foot {
+      width: px2vmin(360px);
+      height: px2vmin(170px);
+      // border: 1px yellow solid;
+      margin-left: px2vmin(10px);
+      .one2-tab-cars {
+        display: flex;
+        justify-content: space-between;
+        .information-foot-left {
+          width: px2vmin(96px);
+          height: px2vmin(30px);
+          line-height: px2vmin(30px);
+          background: url(../../../../assets/styles/images/btn_ycl.png);
+          background-size: 100%;
+          text-align: center;
+          color: white;
+          cursor: pointer;
+        }
+        .cars-distance {
+          width: px2vmin(96px);
+          height: px2vmin(30px);
+          line-height: px2vmin(30px);
+          background: url(../../../../assets/styles/images/btn_wb.png);
+          background-size: 100%;
+          color: white;
+          text-align: center;
+          cursor: pointer;
+        }
+        .ignore {
+          width: px2vmin(96px);
+          height: px2vmin(30px);
+          line-height: px2vmin(30px);
+          background: url(../../../../assets/styles/images/btn_hl.png);
+          background-size: 100%;
+          color: white;
+          cursor: pointer;
+          text-align: center;
+        }
+      }
+      .tab-contents {
+        width: px2vmin(370px);
+        height: px2vmin(140px);
+        // border: 1px pink solid;
+        margin-top: px2vmin(10px);
+        .tab1-text {
+          color: white;
+        }
+        .tab1-border1 {
+          .tab-bottom-text {
+            width: px2vmin(359px);
+            height: px2vmin(101px);
+            background: url(../../../../assets/styles/images/box_intup-2.png);
+            background-size: 100%;
+            color: white;
+            outline: none;
+            border: transparent;
+          }
+          // .input::-webkit-input-placeholder{
+          //   color: white !important;
+          // }
+          .tab-bottom-text::-webkit-input-placeholder {
+            color: white !important;
+          }
+        }
+      }
+    }
+  }
+  #rocco-bottom {
+    width: px2vmin(600px);
+    height: px2vmin(127px);
+    // background-color: pink;
+    // ;
+    background-size: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    .rocco-bottom-ing{
+      width: px2vmin(513px);
+      height: px2vmin(138px);
+      margin-left:px2vmin(83px) ;
+      // margin: 0 auto;
+      // float: right;
+      background: url(../../../../assets/styles/images/pop_x.png)
+    }
+  }
+}

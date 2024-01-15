@@ -1,0 +1,680 @@
+[
+  {
+    "id": "5B50A7007D1226474808A03EE1FA6C71",
+    "roam_name": "学校周围",
+    "points": [
+      {
+        "x": 51824.60546875,
+        "y": -25063.3828125,
+        "z": 1,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 55976.9453125,
+        "y": -15803.15234375,
+        "z": 0.015625,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 52271.890625,
+        "y": -13683.693359375,
+        "z": -0.0703125,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 56747.41015625,
+        "y": -6201.1484375,
+        "z": 0.0078125,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 78619.0078125,
+        "y": -15036.203125,
+        "z": 20,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 76166.71875,
+        "y": -26114.095703125,
+        "z": 0,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 80435.7421875,
+        "y": -29716.89453125,
+        "z": 4197.359375,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 78773.4609375,
+        "y": -33632.71875,
+        "z": 3946.49609375,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 84872.6015625,
+        "y": -34925.6796875,
+        "z": -0.2265625,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 88929.15625,
+        "y": -36374.39453125,
+        "z": 0.0078125,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 85693.4453125,
+        "y": -43591.046875,
+        "z": -0.0078125,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 80412.0546875,
+        "y": -43795.1875,
+        "z": 2790.6640625,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 76024.140625,
+        "y": -41793.890625,
+        "z": 3100.359375,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 75262.625,
+        "y": -45786.46875,
+        "z": -0.0078125,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 72786.484375,
+        "y": -45856.515625,
+        "z": 2914.59375,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 68508.671875,
+        "y": -44519.9921875,
+        "z": 0,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 67102.984375,
+        "y": -43021.6953125,
+        "z": -0.015625,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 60725.49609375,
+        "y": -41152.62109375,
+        "z": -0.0078125,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 59538.95703125,
+        "y": -41601.34375,
+        "z": -0.0078125,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 49940.31640625,
+        "y": -37915.3046875,
+        "z": 0.015625,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 52203.45703125,
+        "y": -32285.927734375,
+        "z": 0,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 43160.33984375,
+        "y": -28246.47265625,
+        "z": 0.0078125,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 45315.328125,
+        "y": -23459.06640625,
+        "z": 40.015625,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 51524.39453125,
+        "y": -25732.3203125,
+        "z": 0,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      }
+    ],
+    "order": null,
+    "options": null,
+    "insert_time": null,
+    "update_time": null
+  },
+  {
+    "id": "937C4A5F8606164507E8294268395D68",
+    "roam_name": "飞机周围",
+    "points": [
+      {
+        "x": -2121.4873046875,
+        "y": 3519.97216796875,
+        "z": 4.73828125,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": -640.734375,
+        "y": 3000.866455078125,
+        "z": -0.005859375,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 830.416015625,
+        "y": 6178.2138671875,
+        "z": 0.001953125,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 5898.05078125,
+        "y": 3938.586669921875,
+        "z": 0.005859375,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 10605.16015625,
+        "y": 2305.93798828125,
+        "z": 0,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 15327.076171875,
+        "y": 123.283203125,
+        "z": 0.0078125,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 20562.2421875,
+        "y": -1993.5234375,
+        "z": -0.005859375,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 29512.1953125,
+        "y": -6014.6103515625,
+        "z": 0.001953125,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 26381.21484375,
+        "y": -14652.619140625,
+        "z": 0,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 22997.556640625,
+        "y": -16259.498046875,
+        "z": -0.001953125,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 19626.814453125,
+        "y": -15161.2958984375,
+        "z": -0.001953125,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 15873.826171875,
+        "y": -13095.1572265625,
+        "z": -0.001953125,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 12161.64453125,
+        "y": -10589.017578125,
+        "z": 0,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 7185.4296875,
+        "y": -7652.50341796875,
+        "z": 0.001953125,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 3562.1923828125,
+        "y": -6329.28857421875,
+        "z": 0.001953125,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": -96.912109375,
+        "y": -5587.7841796875,
+        "z": -0.001953125,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": -2848.6689453125,
+        "y": -5019.21337890625,
+        "z": 0.00390625,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": -3774.91064453125,
+        "y": -4539.166015625,
+        "z": 2,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": -1712.5556640625,
+        "y": 258.7431640625,
+        "z": 0,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": -3317.7001953125,
+        "y": 949.3603515625,
+        "z": 0,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      }
+    ],
+    "order": null,
+    "options": null,
+    "insert_time": null,
+    "update_time": null
+  },
+  {
+    "id": "137F320B734BA3439D18679EB029EBDA",
+    "roam_name": "宿舍周围",
+    "points": [
+      {
+        "x": 81658.9765625,
+        "y": -49474.984375,
+        "z": 0.00390625,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 74540.2265625,
+        "y": -46538.36328125,
+        "z": 0,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 68600.9453125,
+        "y": -44507.90234375,
+        "z": 0.0078125,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 68243.1875,
+        "y": -43723.75390625,
+        "z": -0.0078125,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 60740.75,
+        "y": -40739.47265625,
+        "z": 0.00390625,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 59755.3671875,
+        "y": -39166.828125,
+        "z": 0,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 60259.3984375,
+        "y": -37315.90234375,
+        "z": 0,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 61281.45703125,
+        "y": -36306.33984375,
+        "z": -0.0078125,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 61806.515625,
+        "y": -34648.3984375,
+        "z": 0.015625,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 61197.25390625,
+        "y": -34051.6875,
+        "z": 0,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 63111.05859375,
+        "y": -32631.494140625,
+        "z": 0.0078125,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 63706.97265625,
+        "y": -31277.466796875,
+        "z": 0.02734375,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 72305.78125,
+        "y": -34553.1953125,
+        "z": -0.00390625,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 72960.1328125,
+        "y": -35538.421875,
+        "z": 0,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 78540.640625,
+        "y": -37791.21875,
+        "z": 0.15625,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 78062.859375,
+        "y": -38823.2578125,
+        "z": 0.08203125,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 83187.828125,
+        "y": -41096.3203125,
+        "z": -0.00390625,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 81342.5078125,
+        "y": -43839.54296875,
+        "z": 2792.42578125,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      },
+      {
+        "x": 82889.1015625,
+        "y": -44422.5703125,
+        "z": 3095.328125,
+        "pitch": 0,
+        "yaw": 0,
+        "roll": 0,
+        "distance": 0,
+        "onMouse": true
+      }
+    ],
+    "order": null,
+    "options": null,
+    "insert_time": null,
+    "update_time": null
+  },
+  {
+    "id": "30088CA2A0E8A044DF487F14ED9B5BBF",
+    "roam_name": "测试",
+    "points": [],
+    "order": null,
+    "options": null,
+    "insert_time": "2023-09-22T02:37:18.000Z",
+    "update_time": "2023-09-22T02:37:18.000Z"
+  },
+  {
+    "id": "DD9E3226420D95487D48D0DC184239BE",
+    "roam_name": "测试",
+    "points": [],
+    "order": null,
+    "options": null,
+    "insert_time": "2023-09-25T06:04:30.000Z",
+    "update_time": "2023-09-25T06:04:30.000Z"
+  }
+]

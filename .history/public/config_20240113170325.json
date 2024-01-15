@@ -1,0 +1,21 @@
+{
+  "environments": "PRD",
+  "PRD": {
+    "label": {
+       "visible": true
+    },
+    "api": "http://192.168.0.220:8055/mapvision_5.5_kmyy",
+    "alarmSocket": "ws://192.168.0.220:9002",
+    "moduleUrl": "//192.168.0.220/modules/",
+    "dis": "https://console-mock.apipost.cn/mock/f5623c1f-6ab7-41ae-bd1e-00c583852dce/",
+    "dis1": "http://192.168.0.220:9000",
+    "url": "http://192.168.0.220:19901/aimapvision3d",
+    "projectId": "b2e449c6881f4cd69cd7e602a5e8186e",
+    "mapkey": "f380016eda6fd59ab06e42d0ccb93c6c",
+    "platform": {
+      "name": "ICC",
+      "type": "WEB",
+      "directPlay": true
+    }
+  }
+}

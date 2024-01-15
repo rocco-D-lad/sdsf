@@ -1,0 +1,108 @@
+@import '../../../../assets/styles/utils.scss';
+
+#round-left-header {
+    width: px2vmin(463px);
+
+    height: px2vmin(154px);
+    // margin-top: px2vmin(40px);
+    margin-left: px2vmin(10px);
+    // background: url(../../../../assets/styles/images/biox_1.png);
+    background: url(../../../../assets/styles/images/biox_1.png);
+    padding-top: px2vmin(20px);
+    display: flex;
+    margin-top: px2vmin(-38px);
+
+    .round-left-totality {
+      width: px2vmin(184.57px);
+      height: px2vmin(117px);
+      background: url(../../../../assets/styles/images/Group11184.png);
+      background-size: 100%;
+      // background-color: aqua;
+    }
+
+    .round-left-title {
+      margin-left: px2vmin(5px);
+
+      .rounf-leftTitle-quantity {
+        font-family: YouSheBiaoTiHei;
+        font-size: px2vmin(24px);
+        color: white;
+      }
+
+      .title-Statistics {
+        width: px2vmin(230px);
+        height: px2vmin(26px);
+        background: url(../../../../assets/styles/images/boc_cl.png);
+        display: flex;
+
+        .Statistics-online {
+          width: px2vmin(115px);
+          height: px2vmin(26px);
+          // background-color: bisque;
+          display: flex;
+          text-align: center;
+          padding-top: px2vmin(4px);
+
+          .online-img {
+            width: px2vmin(14px);
+            height: px2vmin(14px);
+            background: url(../../../../assets/styles/images/img_l.png);
+            background-size: 100%;
+          }
+
+          .online-text {
+            font-size: px2vmin(14px);
+            color: white;
+            padding-left: px2vmin(5px);
+            margin-top: px2vmin(-5px);
+            // margin-top: -2px;
+          }
+
+          .online-people {
+            font-family: YouSheBiaoTiHei;
+            font-size: px2vmin(24px);
+            color: #89fdef;
+            line-height: px2vmin(15px);
+            padding-left: px2vmin(10px);
+            margin-top: px2vmin(-1px);
+          }
+        }
+
+        .Statistics-Offline {
+          width: px2vmin(115px);
+          height: px2vmin(26px);
+          // background-color: rgb(102, 95, 87);
+          display: flex;
+          padding-top: px2vmin(4px);
+          text-align: center;
+
+          .Offline-img {
+            width: px2vmin(14px);
+            height: px2vmin(14px);
+            background: url(../../../../assets/styles/images/img_h.png);
+            background-size: 100%;
+          }
+
+          .Offline-text {
+            font-size: px2vmin(14px);
+            color: #d1dfe0;
+            padding-left: px2vmin(5px);
+            margin-top: px2vmin(-5px);
+          }
+
+          .Offline-people {
+            font-family: YouSheBiaoTiHei;
+            font-size: px2vmin(24px);
+            color: #ffb660;
+            line-height: px2vmin(15px);
+            padding-left: px2vmin(10px);
+            margin-top: px2vmin(-1px);
+          }
+        }
+      }
+
+      .round-title {
+        color: white;
+      }
+    }
+  }

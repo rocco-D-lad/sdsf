@@ -1,0 +1,66 @@
+@import '../../../assets/styles/utils.scss';
+
+#flyRoaming {
+  position: absolute;
+  bottom: px2vmin(40);
+  left: px2vmin(-235);
+  .patrol_container{
+    width: px2vmin(330);
+    height: px2vmin(449);
+    background-image: url('../../../assets/images/tool/second/tool1_box_spxl.png');
+    background-size: 100% 100%;
+    text-align: center;
+    position: absolute;
+    bottom: px2vmin(0);
+    left: px2vmin(0);
+
+    .close {
+      cursor: pointer;
+      position: absolute;
+      width: px2vmin(24);
+      height: px2vmin(24);
+      top: px2vmin(7);
+      right: px2vmin(7);
+    }
+    h6 {
+      width: 100%;
+      color: #ffffff;
+      font-size: px2vmin(14);
+      margin-top: px2vmin(10);
+    }
+    .patrolCard{
+      margin-top:px2vmin(11);
+      height: px2vmin(405);
+      overflow-y: overlay;
+      @include scrollbar(2px);
+      .patrolList {
+        display: flex;
+        flex-direction: column;
+        height: px2vmin(90);
+        .patrolListItem{
+          padding: 0 px2vmin(10);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: px2vmin(14);
+          color: #ffffff;
+          border-bottom: 1px solid #fff6f638;
+          .button{
+            width: px2vmin(58);
+            height: px2vmin(27);
+            background: rgba(28,78,114,0.7);
+            border: 1px solid #3FBAFF;
+            margin: px2vmin(6) 0;
+            cursor: pointer;
+            @include flex-center;
+            transition: all .3s;
+            &:active{
+              // color: #3FBAFF;
+              background: #3FBAFF;
+            }
+          }
+        }
+      }
+    }
+  }
+}

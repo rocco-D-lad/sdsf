@@ -1,0 +1,59 @@
+@import '../../assets/styles/utils.scss';
+
+#toolBox {
+  @include notSelect();
+  position: fixed;
+  bottom: px2vmin(30);
+  // right: px2vmin(413);
+  right: 413px;
+  .firstBox{
+    >div{
+      img{
+        width: px2vmin(38);
+        height: px2vmin(38);
+        transition: all .3s;
+        cursor: pointer;
+        &:active{
+          transform: scale(1.2);
+        }
+      }
+    }
+    .resetPosition,.showPage{
+      margin-bottom:px2vmin(16);
+    }
+  }
+
+  .secondBox{
+    width:  px2vmin(550);
+    position: absolute;
+    bottom: px2vmin(5);
+    right: px2vmin(62);
+    .secondList{
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      .secondItem{
+        position: relative;
+        display: flex;
+        align-items: center;
+        background: rgba(38, 91, 141, 0.6);
+        padding: px2vmin(5) px2vmin(8);
+        border-radius: 5px;
+        .clickTitle{
+          display: flex;
+          align-items: flex;
+          cursor: pointer;
+          .secondTitle{
+            color: #ffffff;
+            font-size: px2vmin(14);
+          }
+          .secondIcon{
+            margin-right: px2vmin(8);
+            width: px2vmin(16);
+            height: px2vmin(16);
+          }
+        }
+      }
+    }
+  }
+}

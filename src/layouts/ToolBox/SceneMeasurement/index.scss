@@ -1,0 +1,65 @@
+@import '../../../assets/styles/utils.scss';
+
+#measurementBox {
+  width: px2vmin(318);
+  height: px2vmin(160);
+  background-image: url('../../../assets/images/tool/second/tool1_box_cl.png');
+  background-size: 100% 100%;
+  position: absolute;
+  bottom: px2vmin(40);
+  left: px2vmin(-150);
+  text-align: center;
+  .close {
+    cursor: pointer;
+    position: absolute;
+    width: px2vmin(20);
+    height: px2vmin(20);
+    top: px2vmin(7);
+    right: px2vmin(7);
+  }
+  h6 {
+    width: 100%;
+    color: #ffffff;
+    font-size: px2vmin(14);
+    margin-top: px2vmin(10);
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: px2vmin(125);
+    margin-top: px2vmin(3);
+
+    li {
+      line-height: 100%;
+      height: 100%;
+      cursor: pointer;
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      span {
+        transition: all .2s;
+        color: #30CDFF;
+        font-size: px2vmin(14);
+        display: inline-block;
+        margin-top: px2vmin(10);
+      }
+      img {
+        width: px2vmin(62);
+        height: px2vmin(56);
+      }
+    }
+    li.active{
+      span{
+        color: #30CDFF;
+      }
+    }
+    .sunFunc{
+      span{
+        color: #FFA842;
+      }
+    }
+  }
+}

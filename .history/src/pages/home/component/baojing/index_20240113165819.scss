@@ -1,0 +1,178 @@
+@import '../../../../assets/styles/utils.scss';
+
+.round-left-top {
+    width: px2vmin(484px);
+    height: px2vmin(31px);
+    position: absolute;
+    background-color: #89fdef;
+    background: url(../../../../assets/styles/images/title_2_bjqs.png) no-repeat;
+    background-size: 100%;
+
+    .round-left-img {
+      width: px2vmin(484px);
+      height: px2vmin(31px);
+      position: absolute;
+    }
+
+    .round-left-font {
+      font-family: YouSheBiaoTiHei;
+      font-size: px2vmin(24px);
+      color: white;
+      padding-left: px2vmin(50px);
+      padding-top: px2vmin(1px);
+    }
+  }
+  .round-left-header {
+    width: px2vmin(463px);
+    height: px2vmin(154px);
+    margin-left: px2vmin(10px);
+    background: url(../../../../assets/styles/images/biox_1.png);
+    position: absolute;
+    margin-top: px2vmin(39px);
+
+    .alarm-enquiries {
+      display: flex;
+      width: px2vmin(465px);
+      height: px2vmin(96px);
+      background: url(../../../../assets/styles/images/img_bj.png);
+      background-size: 100%;
+      .one2 {
+        display: flex;
+        .tab-cars {
+          width: px2vmin(84px);
+          height: px2vmin(84px);
+          // background: url(../../../../asets/styles/images/img-1-2.png);
+          // background-size: 100%;
+        }
+        .tab-cars-right {
+          width: px2vmin(284px);
+          height: px2vmin(84px);
+          // border: 1px yellow solid;
+        }
+        .tab-button {
+          width: px2vmin(84px);
+          height: px2vmin(84px);
+          // border: 1px pink solid;
+          .tab-button-text {
+            color: #85bfe5;
+            font-size: px2vmin(12px);
+            float: right;
+          }
+          .tab-button-look {
+            // width: px2vmin(44px);
+            height: px2vmin(22px);
+            background-color: #1ab0ba;
+            float: right;
+            border: none;
+            color: white;
+            position: relative;
+            margin-top: px2vmin(40px);
+            margin-left: px2vmin(15px);
+            text-align: center;
+            font-size: px2vmin(12px);
+            cursor: pointer;
+          }
+        }
+        .one2-tab-cars {
+          width: px2vmin(200px);
+          height: px2vmin(24px);
+          color: white;
+          display: flex;
+          margin-left: px2vmin(10px);
+          .cars-distance {
+            // margin-left: px2vmin(40px);
+            font-size: px2vmin(14px);
+            color: #FFB660;
+          }
+        }
+        .tabs {
+          white-space: nowrap;
+          display: flex;
+          color: white;
+          font-size: px2vmin(14px);
+        }
+      }
+      .tab-contents {
+        width: px2vmin(270px);
+        height: px2vmin(50px);
+        // border: 1px rgb(29, 4, 4) solid;
+        margin-top: px2vmin(15px);
+
+        .tab1-border {
+          display: flex;
+          .tab1-img {
+            width: px2vmin(11.43px);
+            height: px2vmin(13.71px);
+            background: url(../../../../assets/styles/images/icon_dd.png);
+            background-size: 100%;
+            margin-left: px2vmin(10px);
+          }
+          .tab1-text {
+            color: white;
+            font-size: px2vmin(14px);
+            margin-top: px2vmin(-4px);
+            margin-bottom: px2vmin(5px);
+            margin-left: px2vmin(10px);
+          }
+        }
+        .tab1-border1 {
+          display: flex;
+          .tab-bottom-img {
+            width: px2vmin(12.57px);
+            height: px2vmin(12.57px);
+            background: url(../../../../assets/styles/images/icon_sj.png);
+            background-size: 100%;
+            margin-left: px2vmin(10px);
+          }
+          .tab-bottom-text {
+            color: white;
+            font-size: px2vmin(14px);
+            margin-top: px2vmin(-4px);
+            margin-left: px2vmin(10px);
+          }
+        }
+      }
+
+      .one1 {
+        background: url(../../../../assets/styles/images/img-1-2.png);
+        background-size: 100%;
+      }
+    }
+  }
+  .button-upper {
+    width: px2vmin(51.5px);
+    height: px2vmin(51.5px);
+    background: url(../../../../assets/styles/images/btn_fw.png);
+    background-size: 100%;
+    position: relative;
+    left: px2vmin(-59px);
+    cursor: pointer;
+    top: px2vmin(203px);
+  }
+  .button-aidkit {
+    width: px2vmin(51.5px);
+    height: px2vmin(51.5px);
+    background: url(../../../../assets/styles/images/btin_gj.png);
+    background-size: 100%;
+    position: relative;
+    top: px2vmin(203px);
+    left: px2vmin(-59px);
+    cursor: pointer;
+  }
+ 
+  .cars-white{
+    color:  #B2EDFF ;
+    font-size: px2vmin(14px);
+  }
+  .cars-juli{
+    margin-left: 10px;
+  }
+
+  #Icon-m{
+  width: 200px;
+  height: 200px;
+  border: 1px pink solid;
+  position: fixed;
+  bottom: 200px;
+  right: 600px;
+  }
