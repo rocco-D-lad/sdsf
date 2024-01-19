@@ -8,7 +8,7 @@ import { getViewer } from '../../components/MapContainer';
 import SceneWeather from './SceneWeather';
 import SceneMeasurement from './SceneMeasurement';
 import SceneLocations from './SceneLocations';
-import SceneVideoPatrol from './SceneVideoPatrol';
+// import SceneVideoPatrol from './SceneVideoPatrol';
 import SceneFlyRoaming from './SceneFlyRoaming';
 import './index.scss'
 
@@ -26,7 +26,7 @@ export default function ToolBox() {
     { name: "指北", iconName: 'zb1' },
     { name: "常用位置", iconName: 'cywz1' },
     // { name: "视频巡逻", iconName: 'spxl1' },
-    { name: "飞行漫游", iconName: 'fxmy1' }
+    // { name: "飞行漫游", iconName: 'fxmy1' }
   ]
 
   const closeSeconds = () => {
@@ -46,8 +46,8 @@ export default function ToolBox() {
       1: () => currentIndex === index && <SceneMeasurement/>,
       2: () => currentIndex === index && viewer.camera.setNorth(),
       3: () => currentIndex === index && <SceneLocations/>,
-      4: () => currentIndex === index && <SceneVideoPatrol/>,
-      5: () => currentIndex === index && <SceneFlyRoaming/>
+      // 4: () => currentIndex === index && <SceneVideoPatrol/>,
+      // 4: () => currentIndex === index && <SceneFlyRoaming/>
     };
     return components[index] ? components[index]() : null;
   };

@@ -146,7 +146,7 @@ const Details = (props) => {
             <div>
               <ul className="careful-bottom">
                 <li className="Serial-number">
-                  <span className="Serial-number-span">{val.number}</span>
+                  <span className="Serial-number-span">{index+1}</span>
                 </li>
                 <li className="Serial-img">
                   <img className="context-img" src={val.face_pic_url}></img>

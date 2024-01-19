@@ -1,14 +1,15 @@
 @import '../../../assets/styles/utils.scss';
 
-#locationsBox{
+#locationsBox {
   width: px2vmin(330);
   height: px2vmin(863);
-  background-image: url('../../../assets/images/tool/second/tool1_box_cywz.png');
+  background-image: url('../../../assets/images/tool/second/title_xl2_1.png');
   background-size: 100% 100%;
   position: absolute;
   bottom: px2vmin(40);
   left: px2vmin(-10);
-  left: px2vmin(-60);
+  left: px2vmin(-176);
+  // left: -60px;
   .close {
     cursor: pointer;
     position: absolute;
@@ -24,18 +25,25 @@
     font-size: px2vmin(14);
     margin-top: px2vmin(10);
   }
-  .buttonGroup{
+  .buttonGroup {
     margin-top: px2vmin(20);
     margin-left: px2vmin(15);
     display: flex;
     align-items: center;
-    .ant-btn{
-      line-height: 100%;
-      height: 27px
+    .ant-btn-primary {
+      width: 56px;
+      height: 28px;
+      background-color: pink;
+      border: transparent;
+      background: url(../../../assets/images/tool/second/btn_tianjia.png);
     }
-    .switchThumbnail{
+    .ant-btn {
+      line-height: 100%;
+      height: px2vmin(27);
+    }
+    .switchThumbnail {
       margin-left: px2vmin(20);
-      .switchLabel{
+      .switchLabel {
         color: #ffffff;
         font-size: px2vmin(14);
         display: inline-block;
@@ -44,19 +52,20 @@
     }
   }
 
-  .locationList_container{
+  .locationList_container {
     margin-top: px2vmin(10);
     height: px2vmin(765);
     overflow-y: overlay;
     @include scrollbar(2px);
-    .locationList{
+    .locationList {
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding-left: 0 !important;
 
-      .locationItem{
+      .locationItem {
         width: px2vmin(300);
-        background: #4683c977;
+        // background: #4683c977;
         background-size: 100% 100%;
         border-radius: px2vmin(5);
         box-shadow: 0 0 px2vmin(5) #000;
@@ -64,22 +73,22 @@
         padding: px2vmin(8) px2vmin(8);
         box-sizing: border-box;
         cursor: pointer;
-        .operate{
+        .operate {
           display: flex;
           justify-content: space-between;
           width: 100%;
-          .name{
+          .name {
             font-size: px2vmin(14);
             color: #ffffff;
           }
-          .operateInput{
-            .ant-input{
+          .operateInput {
+            .ant-input {
               width: px2vmin(150);
-              height: 27px
+              height: 27px;
             }
           }
-          .operateButton{
-            .ant-btn{
+          .operateButton {
+            .ant-btn {
               width: px2vmin(32);
               margin: 0 px2vmin(2);
               height: 27px;
@@ -88,7 +97,7 @@
           }
         }
 
-        img{
+        img {
           margin-top: px2vmin(8);
           width: 100%;
           height: px2vmin(180);

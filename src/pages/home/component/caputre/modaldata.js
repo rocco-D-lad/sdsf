@@ -1,8 +1,7 @@
-import { Modal, Pagination,Select } from 'antd'
+import { Modal, Pagination, Select } from 'antd'
 import React, { useEffect, useState } from 'react'
 import './index.scss'
 import { Renlianzp } from '../../../../api/home'
-import { Api, hooks, utils } from 'tuyang-shared'
 const ModalData = (prop) => {
   const { setImgSrc } = prop || {}
   const [inputValue, setInputValue] = useState('')
@@ -14,52 +13,8 @@ const ModalData = (prop) => {
   // const [isModalOpen, setIsModalOpen] = useState(false)
   const options = [10, 20, 30, 40, 50]
   const [current, setCurrent] = useState(1) // 当前页码
-  const [pageSize, setPageSize] = useState(10) // 每页显示的数据数量
+  const [pageSize, setPageSize] = useState() // 每页显示的数据数量
   const [total, setTotal] = useState(0) // 数据总数，根据实际情况进行计算或传递
-  const [data] = useState([
-    {
-      id: 1,
-      name: '第一个',
-      age: '手机号',
-      detl: '男',
-      totole: '抓拍点'
-    },
-    {
-      id: 2,
-      name: '第二个',
-      age: '手机号',
-      detl: '男',
-      totole: '抓拍点'
-    },
-    {
-      id: 3,
-      name: '第三个',
-      age: '手机号',
-      detl: '男',
-      totole: '抓拍点'
-    },
-    {
-      id: 4,
-      name: '第四个',
-      age: '手机号',
-      detl: '男',
-      totole: '抓拍点'
-    },
-    {
-      id: 5,
-      name: '第五个',
-      age: '手机号',
-      detl: '男',
-      totole: '抓拍点'
-    },
-    {
-      id: 6,
-      name: '第六个',
-      age: '手机号',
-      detl: '男',
-      totole: '抓拍点'
-    }
-  ])
 
   const Zhaopian = () => {
     Renlianzp().then((res) => {
@@ -67,45 +22,32 @@ const ModalData = (prop) => {
       // setPageData(res.data.data.slice(0, 15))
       setPhotograph(res.data.data)
       setPhotographtwo(res.data.data)
-      // console.log(res.data.data)
+      console.log(res.data.data)
     })
   }
-  // const code=photograph
-  // const getGenderName=(sex)=>{
-  //   if(sex===0){
-  //     return '女';
-  //   }else if(sex===1){
-  //     return '男'
-  //   }else{
-  //     return '未知'
-  //   }
-  // }
 
-  const handleChange = (event) => {
-    setInputValue(event.target.value)
-    // console.log(event.target.value)
-    const value = event.target.value
-    // const regex = /^[\u4e00-\u9fa5]+$/
-    // if (!regex.test(value)) {
-    //   event.target.value = value.slice(0, value.length - 1) // 移除最后一个非中文字符
-    //   alert('只能输入中文');
-    // }
-  }
-
-  const { run: getFaceLib, cancel: getFaceLibCancel } = hooks.useRequest()
-  const handleSearchClick = () => {
-    if (inputValue === '') setPhotograph(photographtwo)
+  const handleSearchClick = (e) => {
+    console.log(pageSize,current,'pageSize')
+    // const {value}=e.target
+    // console.log(e.target.value,'value');
+    // setPageData(searchArr.slice(0, 15))
+    if (inputValue === '') {
+      // setPageData(photographtwo.slice(0, 15))
+      setPageData(photographtwo)
+      setCurrent(1);
+      console.log('asdasdasd')
+      // setInputValue('') // 清空input值
+      return
+    }
     if (!isDivVisible) return
     const searchArr = photographtwo.filter((item) => {
       return item.name.includes(inputValue)
     })
     setPhotograph(searchArr)
+    // setPageData(searchArr.slice(0, 15))
+    setPageData(searchArr)
     console.log(searchArr)
-
-    // setSearchResult(data.filter((div) => div.content.includes(inputValue)))
-    // setIsDivVisible(false)
   }
-  
 
   useEffect(() => {
     Zhaopian()
@@ -131,9 +73,15 @@ const ModalData = (prop) => {
             placeholder="请输入姓名"
             onChange={(event) => {
               setInputValue(event.target.value)
+              if (event.target.value === '') {
+                setCurrent(1);
+                setPhotograph(photographtwo)
+                setPageData(photographtwo.slice(0, 15))
+                // setInputValue('') // 清空input值
+              }
             }}
           ></input>
-          <div className="Captrue-search" onClick={handleSearchClick}>
+          <div className="Captrue-search" onClick={() => handleSearchClick()}>
             <span className="Captrue-search-da"></span>
           </div>
         </div>
@@ -143,7 +91,7 @@ const ModalData = (prop) => {
           ))}
           {isDivVisible &&
             pageData.map((val, index) => (
-              <div className="capture-photo">
+              <div className="capture-photo" onClick={prop.onback}>
                 <img
                   className="photo-left"
                   src="https://gw.alicdn.com/bao/uploaded/i4/1993969976/O1CN01LqQh2T2NZ3vZi1oil_!!0-item_pic.jpg_300x300q90.jpg"
@@ -166,7 +114,7 @@ const ModalData = (prop) => {
                     <span>性别&nbsp;:&nbsp;&nbsp;&nbsp;</span>
                     <span>
                       {/* {val.sex === 0 ? '女' : val.sex === 1 ? '男' : '未知'} */}
-                      {/* {val.sex == 0 ? '女' : '男'} */}男
+                      {val.sex == 0 ? '女' : '男'}
                     </span>
                   </div>
                   <div>
@@ -181,16 +129,23 @@ const ModalData = (prop) => {
           <Pagination
             className="paging"
             defaultCurrent={1}
+            current={current}
             // defaultCurrent={libParam.pageNo}
             // pageSize={libParam.pageSize}
             total={photograph.length}
             defaultPageSize={15}
-            onChange={(e) => {
-              console.log('e', e)
-              setPageData(photograph.slice((e - 1) * 15, e * 15))
+            onChange={(page, pageSize) => {
+              setCurrent(page)
+              setPageSize(pageSize)
+              // console.log('e', e)
+              // setPageData(photograph.slice((e - 1) * 15, e * 15))
+              setPageData(
+                photograph.slice((page - 1) * pageSize, page * pageSize)
+               
+              )
             }}
           />
-          <Select
+          {/* <Select
             defaultValue={pageSize}
             style={{ width: 90 }}
             onChange={setPageSize}
@@ -200,7 +155,7 @@ const ModalData = (prop) => {
                 {value}
               </Select.Option>
             ))}
-          </Select>
+          </Select> */}
         </div>
       </div>
     </Modal>

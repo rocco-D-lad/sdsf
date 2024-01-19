@@ -38,11 +38,13 @@
     // margin-top: px2vmin(-20px);
     .Capture-photograph {
       width: px2vmin(854px);
-      height: px2vmin(640px);
+      height: px2vmin(639px);
+      // height: px2vmin(640px);
       // border: 1px red solid;
+      cursor: pointer;
       overflow: hidden;
       // margin-top: px2vmin(-10px);
-      // margin-top: px2vmin(-25px);
+      margin-top: px2vmin(-17px);
       .capture-header {
         width: px2vmin(831px);
         height: px2vmin(29px);
@@ -130,7 +132,7 @@
       .paging {
         border: none !important;
         background-color: transparent !important;
-        margin-top: px2vmin(10px);
+        margin-top: px2vmin(15px);
       }
       .ant-pagination-item {
         background-color: transparent !important;
@@ -177,4 +179,6 @@
     margin-top: px2vmin(-13px) !important;
     // padding-top: 10px !important;
 }
-
+.ant-select{
+  display: none;
+}

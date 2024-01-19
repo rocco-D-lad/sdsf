@@ -3,6 +3,11 @@ import './index.scss'
 
 const List = (props) => {
 const {xunGengList} =props
+
+const handleClick=(event)=> {
+  const id = event.target.id; // 获取按钮id
+  console.log(id); 
+}
   return (
     <div id="list-one">
       <div id="details-header">
@@ -25,14 +30,14 @@ const {xunGengList} =props
           {xunGengList.map((val, index) => (
             <ul className="details-foot-ul">
               <li>
-                <div className="details-foot-yi">1</div>
+                <div className="details-foot-yi">{index+1}</div>
               </li>
               <li>
                 <div className="details-foot-301">{val.positionName}</div>
               </li>
               <li>
                 <div id="details-foot-button">
-                  <span className="details-foot-button-img"></span>
+                  <span className="details-foot-button-img" id={`button-${index}`} onClick={handleClick}></span>
                 </div>
               </li>
             </ul>

@@ -57,62 +57,66 @@ const Search = (props) => {
 
   useEffect(() => {
     Tansuo().then((res) => {
-      console.log('搜索数据',res.data)
+      console.log('搜索数据', res.data)
       setAnalarm(res.data.data)
     })
   }, [])
 
   return (
-    <div id="results">
-      <div id="details-header">
-        <div className="details-header-text">人脸轨迹检索结果</div>
-        <div className="details-header-img" onClick={props.onback}>
-          关闭
-        </div>
-      </div>
-      <div id="details-context">
-        <div className="details-context-header">
-          <div className="details-context-kong">
-            <ul className="details-context-ul">
-              <li className="details-context-li">序号</li>
-              <li>时间</li>
-              <li>次数</li>
-            </ul>
+    <div>
+      <div className="modal-overlay" onClick={props.onback}></div>
+      {/* 添加一个遮罩层 */}
+      <div id="results">
+        <div id="details-header">
+          <div className="details-header-text">人脸轨迹检索结果</div>
+          <div className="details-header-img" onClick={props.onback}>
+            关闭
           </div>
         </div>
-        <div className="details-foot">
-          {analarm.map((val, index) => (
-            <ul
-              className="details-foot-ul"
-              onClick={() => {
-                onofce()
-                alarmlistp(index)
-              }}
-            >
-              <li>
-                <span className="details-foot-yi">1</span>
-              </li>
-              <li>
-                <span className="details-foot-301">{val.capture_time}</span>
-              </li>
-              <li>
-                <span id="details-foot-button">
-                  {val.similarity}
-                  {/* <span className="details-foot-button-img">{val.frequency}</span> */}
-                </span>
-              </li>
-            </ul>
-          ))}
+        <div id="details-context">
+          <div className="details-context-header">
+            <div className="details-context-kong">
+              <ul className="details-context-ul">
+                <li className="details-context-li">序号</li>
+                <li>时间</li>
+                <li>次数</li>
+              </ul>
+            </div>
+          </div>
+          <div className="details-foot">
+            {analarm.map((val, index) => (
+              <ul
+                className="details-foot-ul"
+                onClick={() => {
+                  onofce()
+                  alarmlistp(index)
+                }}
+              >
+                <li>
+                  <span className="details-foot-yi">{index + 1}</span>
+                </li>
+                <li>
+                  <span className="details-foot-301">{val.capture_time}</span>
+                </li>
+                <li>
+                  <span id="details-foot-button">
+                    {val.similarity}
+                    {/* <span className="details-foot-button-img">{val.frequency}</span> */}
+                  </span>
+                </li>
+              </ul>
+            ))}
+          </div>
         </div>
+        {face && (
+          <Details
+            face={face}
+            onback={onCancel}
+            tags={tags}
+            analarm={analarm}
+          ></Details>
+        )}
       </div>
-      {face && (
-        <Details
-          face={face}
-          onback={onCancel}
-          tags={tags}
-          analarm={analarm}
-        ></Details>
-      )}
     </div>
   )
 }

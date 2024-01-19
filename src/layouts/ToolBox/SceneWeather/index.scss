@@ -2,8 +2,8 @@
 
 #weatherBox {
   width: px2vmin(260);
-  height: px2vmin(124);
-  background-image: url('../../../assets/images/tool/second/tool1_box_tianqi.png');
+  height: px2vmin(135.5);
+  background-image: url('../../../assets/images/tool/second/title_xl.png');
   background-size: 100% 100%;
   position: absolute;
   bottom: px2vmin(40);
@@ -28,6 +28,7 @@
     align-items: center;
     justify-content: space-around;
     height: px2vmin(90);
+    padding-left: 0 !important;
 
     li {
       line-height: 100%;

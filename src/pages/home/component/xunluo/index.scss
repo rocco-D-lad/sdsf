@@ -200,5 +200,35 @@
           }
         }
       }
+      #btn_box{
+        width: 180px;
+        height: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        z-index: 11;
+        right: -220px;
+        top: 190px;
+        div {
+          width: 74px;
+          height: 30px;
+          background: url(../../../../assets/styles/images/btn_zt.png);
+          background-size: 100%;
+          line-height: 30px;
+          text-align: center;
+          cursor: pointer;
+          border-radius: 2px;
+        }
+      }
+      #btn_box_none {
+        display: none;
+      }
+      .round-Controls{
+        width: 100px;
+        height: 100px;
+       
+       
+      }
     }
   }

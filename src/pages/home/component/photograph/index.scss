@@ -12,6 +12,7 @@
     top: 50%;
     margin-top: px2vmin(270px);
     pointer-events: all;
+    z-index: 100;
     // margin-left: px2vmin(-710px);
     // margin-top: px2vmin(-510px);
     .information-header {
@@ -162,4 +163,14 @@
       background: url(../../../../assets/styles/images/pop_x.png)
     }
   }
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明的黑色背景 */
+  z-index: 99; /* 确保遮罩层位于弹窗下方 */
+  pointer-events: all;
 }

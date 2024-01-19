@@ -13,6 +13,7 @@ const Photograph = (props) => {
   }
   return (
     <div id="rocco-li">
+       <div className="modal-overlay" onClick={props.onbacks}></div>
       <div id="rocco">
         <div className="information-header">
           <div className="header-text">报警详情</div>

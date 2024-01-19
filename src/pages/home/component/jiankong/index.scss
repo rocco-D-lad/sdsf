@@ -1,120 +1,200 @@
 @import '../../../../assets/styles/utils.scss';
 
 #round-Supervisory {
-    width: px2vmin(463px);
-    height: px2vmin(417px);
-    position: absolute;
-    // background-color: white;
-    margin-left: px2vmin(10px);
-    background: url(../../../../assets/styles/images/box_2_1.png);
+  width: px2vmin(463px);
+  height: px2vmin(417px);
+  position: absolute;
+  // background-color: white;
+  margin-left: px2vmin(10px);
+  background: url(../../../../assets/styles/images/box_2_1.png);
 
-    .tabs {
-      display: flex;
-      .tab-list {
-        width: px2vmin(83px);
-        height: px2vmin(32px);
-        background: url(../../../../assets/styles/images/btn_gaun.png) center
-          center no-repeat;
-        background-size: 100%;
-        // position: absolute;
-        color: white;
-        border: none;
-        background-color: transparent;
-        cursor: pointer;
-      }
+  .tab-content::-webkit-scrollbar {
+    width: px2vmin(8px);
+    height: px2vmin(8px);
+    background-color: #02577c;
+  }
+  .tab-content::-webkit-scrollbar-track {
+    background-color: #02577c !important;
+  }
+  .tab-content::-webkit-scrollbar-thumb {
+    background-color: #27cbff;
+    border-radius: px2vmin(10px);
+  }
+  .tab-content {
+    width: px2vmin(430);
+    height: px2vmin(360px);
+    // border: 1px red solid;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-top: px2vmin(10);
+    margin-left: px2vmin(15);
+  }
+  .tabs {
+    display: flex;
+    .tab-list {
+      width: px2vmin(83px);
+      height: px2vmin(32px);
+      background: url(../../../../assets/styles/images/btn_gaun.png) center
+        center no-repeat;
+      background-size: 100%;
+      // position: absolute;
+      color: white;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
 
-      .tab-Collect {
-        width: px2vmin(83px);
-        height: px2vmin(32px);
-        background: url(../../../../assets/styles/images/btn_gaun_1.png) center
-          center no-repeat;
-        background-color: pink;
-        background-size: 100%;
-        color: white;
-        cursor: pointer;
-        // position: absolute;
-        border: none;
-        background-color: transparent;
-      }
+    .tab-Collect {
+      width: px2vmin(83px);
+      height: px2vmin(32px);
+      background: url(../../../../assets/styles/images/btn_gaun_1.png) center
+        center no-repeat;
+      background-color: pink;
+      background-size: 100%;
+      color: white;
+      cursor: pointer;
+      // position: absolute;
+      border: none;
+      background-color: transparent;
+    }
 
-      .tab-input {
-        width: px2vmin(220px);
-        height: px2vmin(30px);
-        background: url(../../../../assets/styles/images/box_intup.png) center
-          center no-repeat;
-        background-size: 100%;
-        border: px2vmin(1px) #49b8f6 solid;
-        padding-left: px2vmin(10px);
-        margin-left: px2vmin(20px);
-        margin-top: px2vmin(5px);
-        outline: none;
-        color: white;
-      }
-      .tab-input::-webkit-input-placeholder {
-        color: white !important;
-      }
+    .tab-input {
+      width: px2vmin(220px);
+      height: px2vmin(30px);
+      background: url(../../../../assets/styles/images/box_intup.png) center
+        center no-repeat;
+      background-size: 100%;
+      border: px2vmin(1px) #49b8f6 solid;
+      padding-left: px2vmin(10px);
+      margin-left: px2vmin(20px);
+      margin-top: px2vmin(5px);
+      outline: none;
+      color: white;
+    }
+    .tab-input::-webkit-input-placeholder {
+      color: white !important;
+    }
 
-      .tab-Searchbox {
-        width: px2vmin(36px);
-        height: px2vmin(30px);
-        background: url(../../../../assets/styles/images/box_intup_1.png) center
-          center no-repeat;
-        background-size: 100%;
-        align-content: center;
-        margin-left: px2vmin(5px);
-        margin-top: px2vmin(5px);
-      }
-      .tab-Magnifying {
-        width: px2vmin(23px);
-        height: px2vmin(23px);
-        background: url(../../../../assets/styles/images/icon_ss.png) center
-          center no-repeat;
-        background-size: 100%;
-        margin-left: px2vmin(5px);
-        margin-top: px2vmin(5px);
-      }
-      .dropdown-img {
-        width: px2vmin(12px);
-        height: px2vmin(6px);
-        background: url(../../../../assets/styles/images/icon_ss.png) center
-          center no-repeat;
-        background-size: 100%;
-      }
+    .tab-Searchbox {
+      width: px2vmin(36px);
+      height: px2vmin(30px);
+      background: url(../../../../assets/styles/images/box_intup_1.png) center
+        center no-repeat;
+      background-size: 100%;
+      align-content: center;
+      margin-left: px2vmin(5px);
+      margin-top: px2vmin(5px);
+      cursor: pointer;
+    }
+    .tab-Magnifying {
+      width: px2vmin(23px);
+      height: px2vmin(23px);
+      background: url(../../../../assets/styles/images/icon_ss.png) center
+        center no-repeat;
+      background-size: 100%;
+      margin-left: px2vmin(5px);
+      margin-top: px2vmin(5px);
+      cursor: pointer;
+    }
+    .dropdown-img {
+      width: px2vmin(12px);
+      height: px2vmin(6px);
+      background: url(../../../../assets/styles/images/icon_ss.png) center
+        center no-repeat;
+      background-size: 100%;
     }
   }
-  #Supervisory-header {
-    width: px2vmin(180px);
+}
+#Supervisory-header {
+  width: px2vmin(180px);
+  height: px2vmin(20px);
+  // border: 1px solid pink;
+  background-color: transparent;
+  display: flex;
+  #Supervisory {
+    width: px2vmin(15px);
+    height: px2vmin(15px);
+    background: url(../../../../assets/styles/images/icon_jk.png) no-repeat;
+    background-size: 100%;
+    margin-top: px2vmin(2);
+  }
+  .Supervisory-text {
+    // width: px2vmin(110px);
+    margin-left: px2vmin(10px);
+    margin-top: px2vmin(-2px);
+  }
+  .Supervisory-img {
+    width: px2vmin(16.67px);
+    height: px2vmin(16.25px);
+    background: url(../../../../assets/styles/images/icon_sc.png) no-repeat;
+    background-size: 100%;
+    margin-left: px2vmin(15px);
+    margin-top: px2vmin(2);
+  }
+  .Supervisory-img-two {
+    width: px2vmin(20px);
     height: px2vmin(20px);
-    // border: 1px solid pink;
-    background-color: transparent;
+    background: url(../../../../assets/styles/images/icon_sc_2.png) no-repeat;
+    background-size: 100%;
+    margin-left: px2vmin(13px);
+  }
+}
+
+.Collect-img-tab2 {
+  width: px2vmin(443);
+  height: px2vmin(27);
+  background: url(../../../../assets/styles/images/img-xz.png);
+  background-size: 100%;
+  margin-bottom: px2vmin(4);
+  // border: 1px red solid;
+  color: white;
+  .Collect-list {
     display: flex;
-    #Supervisory {
-      width: px2vmin(15px);
-      height: px2vmin(15px);
-      background: url(../../../../assets/styles/images/icon_jk.png) no-repeat;
-      background-size: 100%;
-      margin-top: 2px;
+    .Collect-number {
+      width: px2vmin(20);
+      height: px2vmin(20);
+      // border: 1px red solid;
+      margin-left: px2vmin(-22);
     }
-    .Supervisory-text {
-      // width: px2vmin(110px);
-      margin-left: px2vmin(10px);
-      margin-top: px2vmin(-2px);
-    }
-    .Supervisory-img {
+    .Collect-camera-img {
       width: px2vmin(16.67px);
       height: px2vmin(16.25px);
-      background: url(../../../../assets/styles/images/icon_sc.png) no-repeat;
+      background: url(../../../../assets/styles/images/icon_jk.png) no-repeat;
       background-size: 100%;
-      margin-left: px2vmin(13px);
-      margin-top: 2px;
+      margin-left: px2vmin(21);
+      margin-top: px2vmin(2);
     }
-    .Supervisory-img-two {
-      width: px2vmin(20px);
-      height: px2vmin(20px);
-      background: url(../../../../assets/styles/images/icon_sc_2.png) no-repeat;
+    .Collect-text {
+      margin-left: px2vmin(13);
+      width: px2vmin(190);
+      // border: 1px red solid;
+    }
+    .Collect-Star-img {
+      width: px2vmin(16.67px);
+      height: px2vmin(16.25px);
+      // background: url(../../../../assets/styles/images/icon_sc.png) no-repeat;
       background-size: 100%;
-      margin-left: px2vmin(11px);
-      // margin-left: 11px;
-      // margin-top: 2px;
+      margin-left: px2vmin(100);
+      // margin-top: px2vmin(4);
+      cursor: pointer;
     }
   }
+}
+.tab-Tree-structure {
+  margin-top: px2vmin(10);
+}
+.list-img-flex {
+  display: flex;
+  .list-img-icon-jk {
+    width: px2vmin(15);
+    height: px2vmin(15);
+    margin-left: px2vmin(10);
+    margin-top: px2vmin(-2);
+  }
+  .list-text-icon-buttom {
+    margin-left: px2vmin(10);
+    width: px2vmin(140);
+    height: px2vmin(25) !important;
+    overflow: hidden;
+  }
+}

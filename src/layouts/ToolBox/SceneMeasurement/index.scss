@@ -3,7 +3,7 @@
 #measurementBox {
   width: px2vmin(318);
   height: px2vmin(160);
-  background-image: url('../../../assets/images/tool/second/tool1_box_cl.png');
+  background-image: url('../../../assets/images/tool/second/title_xl2.png');
   background-size: 100% 100%;
   position: absolute;
   bottom: px2vmin(40);
@@ -29,6 +29,7 @@
     justify-content: space-around;
     height: px2vmin(125);
     margin-top: px2vmin(3);
+    padding-left: 0 !important;
 
     li {
       line-height: 100%;

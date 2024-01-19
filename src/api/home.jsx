@@ -47,4 +47,7 @@ export const Renlianzp = () =>
   })
 
 
+export const Listlieb=()=>request.post('https://console-mock.apipost.cn/mock/6791ab0a-dff9-4576-8abb-df33be3b5ee7/camera/list?apipost_id=0b42fe')
+
+
 export const Tansuo=()=>request.post('api/face/captureSearch')

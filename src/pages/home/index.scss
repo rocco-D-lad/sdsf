@@ -6,13 +6,23 @@
   // width: 100%;
   // height: 100%;
   // overflow: hidden;
+  width: 100%;
+  pointer-events: none;
+  height: 100%;
+  position: absolute;
+  background: url(../../assets//styles//images/img_d.png) no-repeat center center;
+  #sceneVideoPatrol_ctrl_container{
+    position: absolute;
+    top: px2vmin(90);
+    left: px2vmin(30);
+  }
   #background-img {
     width: 100%;
     height: 100%;
-    background: url(../../assets//styles//images/img_d.png) no-repeat;
+    // background: url(../../assets//styles//images/img_d.png) no-repeat center center;
     background-size: 100%;
-    position: relative;
     pointer-events: none; //可以滑动地图
+    position: absolute;
    
   }
 }
@@ -80,7 +90,7 @@ p {
   background-size: 100%;
   // background-color: aqua;
   bottom: px2vmin(1px);
-  // pointer-events: all;
+  pointer-events: none;
 
   .date-time {
     width: px2vmin(484px);
@@ -589,9 +599,10 @@ p {
               height: px2vmin(84px);
               // border: 1px pink solid;
               .tab-button-text {
-                color: #85bfe5;
+                // color: #85bfe5;
                 font-size: px2vmin(12px);
                 float: right;
+                margin-left: px2vmin(2);
               }
               .tab-button-look {
                 // width: px2vmin(44px);
@@ -601,7 +612,7 @@ p {
                 border: none;
                 color: white;
                 position: relative;
-                margin-top: px2vmin(40px);
+                margin-top: px2vmin(35px);
                 margin-left: px2vmin(15px);
                 text-align: center;
                 font-size: px2vmin(12px);
@@ -614,6 +625,9 @@ p {
               color: white;
               display: flex;
               margin-left: px2vmin(10px);
+              .Generalalarm{
+                margin-left: px2vmin(10);
+              }
               .cars-distance {
                 // margin-left: px2vmin(40px);
                 font-size: px2vmin(14px);
@@ -855,8 +869,8 @@ p {
 }
 
 #Icon-m{
-  width: 200px;
-  height: 200px;
+  // width: 200px;
+  // height: 200px;
   // border: 1px pink solid;
   // background-color: #FFB660;
   position: relative;
