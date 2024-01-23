@@ -166,8 +166,12 @@
     }
     .Collect-text {
       margin-left: px2vmin(13);
-      width: px2vmin(190);
+      width: px2vmin(210);
+      height: px2vmin(25);
       // border: 1px red solid;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-wrap: nowrap;
     }
     .Collect-Star-img {
       width: px2vmin(16.67px);
@@ -194,7 +198,7 @@
   .list-text-icon-buttom {
     margin-left: px2vmin(10);
     width: px2vmin(140);
-    height: px2vmin(25) !important;
+    height: px2vmin(28) !important;
     overflow: hidden;
   }
 }

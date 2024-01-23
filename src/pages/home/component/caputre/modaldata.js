@@ -145,17 +145,6 @@ const ModalData = (prop) => {
               )
             }}
           />
-          {/* <Select
-            defaultValue={pageSize}
-            style={{ width: 90 }}
-            onChange={setPageSize}
-          >
-            {options.map((value) => (
-              <Select.Option key={value} value={value}>
-                {value}
-              </Select.Option>
-            ))}
-          </Select> */}
         </div>
       </div>
     </Modal>

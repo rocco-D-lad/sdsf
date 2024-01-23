@@ -51,3 +51,57 @@ export const Listlieb=()=>request.post('https://console-mock.apipost.cn/mock/679
 
 
 export const Tansuo=()=>request.post('api/face/captureSearch')
+
+
+// /**
+//    * 将 list 数组转化为 treeList
+//    * @param {Array} dataList list数据
+//    * @param {string} id 节点key值
+//    * @param {string} pId 父节点key值
+//    * @returns {Array} treeList
+//    */
+//   function listToTree(DataList, id, pId) {
+//       const data = JSON.parse(JSON.stringify(DataList))
+//       const result = []
+//       if (!Array.isArray(data)) {
+//         return result
+//       }
+//       data.forEach((item) => {
+//         delete item.children
+//       })
+//       const map = {}
+//       data.forEach((item) => {
+//         map[item[id]] = item
+//       })
+//       data.forEach((item) => {
+//         const parent = map[item[pId]]
+//         if (parent) {
+//           ;(parent.children || (parent.children = [])).push(item)
+//         } else {
+//           result.push(item)
+//         }
+//       })
+//       console.log(result,"组织目录")
+//       return result
+//     }
+
+
+
+//   const getliebiao = async () => {
+
+//       const CameraOtherdata = await axios({
+//         url: `${api.baseURL}/device/camera/tree`,
+//         method: 'POST',
+//         data: null,
+  
+  
+//       })
+//       console.log(CameraOtherdata, '返回值状态')
+//       if (CameraOtherdata.data.msg === 'success') {
+//         console.log(CameraOtherdata.data.data, '树code树code树code')
+//         setPageData(CameraOtherdata.data.data[0].children)
+//         setcamera(CameraOtherdata.data.data[0].children.camera_code)
+//       }
+//       // })
+//     }
+  

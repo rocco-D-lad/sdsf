@@ -271,6 +271,8 @@ p {
       position: absolute;
       margin-top: px2vmin(39px);
       // background-color: #FFB660;
+      }
+      
 
       .similarity {
         margin-left: px2vmin(18px);
@@ -745,7 +747,6 @@ p {
       margin-left: 10px;
     }
   }
-}
 #dateofday:before {
   width: px2vmin(189px);
   height: px2vmin(30px);
@@ -876,4 +877,17 @@ p {
   position: relative;
   bottom: 200px;
   right: 800px;
+  }
+  .right-value{
+    color: white;
+    font-family: YouSheBiaoTiHei;
+    font-size: px2vmin(24);
+    position: relative;
+    left: px2vmin(380);
+    top: px2vmin(-123);
+    width: px2vmin(50);
+    .round-vehicle{
+      color: white;
+      font-family: YouSheBiaoTiHei;
+    }
   }

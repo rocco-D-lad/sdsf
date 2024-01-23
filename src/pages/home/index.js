@@ -64,6 +64,7 @@ const Home = () => {
   const [otherDevices, setotherDevices] = useState()
   const [ready, setReady] = useState(false)
   const [vfusion, setVfusion] = useState(false)
+  
   /*ending*/
   //报警列表
   const alarmlist = () => {
@@ -403,14 +404,14 @@ const Home = () => {
   // }
   // const style = styles[color]
   const alarmLevelColor = {
-   一般: '#FFB660', 
-    严重: '#FF6060', 
-    轻微: 'FFDC60' 
+    一般: '#FFB660',
+    严重: '#FF6060',
+    轻微: 'FFDC60'
   }
   const alarmLeves = {
-   已处理: '#85BFE5', 
-    未处理: '#E58B85 ', 
-    误报: '#E5AD85 ' 
+    已处理: '#85BFE5',
+    未处理: '#E58B85 ',
+    误报: '#E5AD85 '
   }
 
   const Render = useMemo(
@@ -580,7 +581,14 @@ const Home = () => {
                     <p className="round-left-font">报警管理</p>
                   </div>
                   <div className="round-left-header">
-                    <BaojingPie></BaojingPie>
+                    <BaojingPie>
+                      <div>123</div>
+                    </BaojingPie>
+                    <div className='right-value'>
+                      <div className="round-vehicle">123</div>
+                      <div>123</div>
+                      <div>123</div>
+                    </div>
                   </div>
                 </div>
                 {/* 报警趋势 */}
@@ -677,7 +685,8 @@ const Home = () => {
                                       />
                                       <div>{val.alarm_lv === '一般' ? {color:red} : ''}</div> */}
                                     {/* </div> */}
-                                    <div className='Generalalarm'
+                                    <div
+                                      className="Generalalarm"
                                       style={{
                                         color: alarmLevelColor[val.alarm_lv]
                                       }}
@@ -687,24 +696,24 @@ const Home = () => {
                                     <div className="cars-juli"></div>
                                   </div>
                                 </div>
-                                <div className="tab-contents" >
+                                <div className="tab-contents">
                                   {/* {activeTabs === 'tab1' && ( */}
-                                    <div>
-                                      <div className="tab1-border">
-                                        <div className="tab1-img"></div>
-                                        <div className="tab1-text">
-                                          {val.alarmAddr}
-                                          {/* 校区-1区-枪机k09 */}
-                                        </div>
-                                      </div>
-                                      <div className="tab1-border1">
-                                        <div className="tab-bottom-img"></div>
-                                        <div className="tab-bottom-text">
-                                          {val.alarmTime}
-                                          {/* 2023-11-24 10:45:58 */}
-                                        </div>
+                                  <div>
+                                    <div className="tab1-border">
+                                      <div className="tab1-img"></div>
+                                      <div className="tab1-text">
+                                        {val.alarmAddr}
+                                        {/* 校区-1区-枪机k09 */}
                                       </div>
                                     </div>
+                                    <div className="tab1-border1">
+                                      <div className="tab-bottom-img"></div>
+                                      <div className="tab-bottom-text">
+                                        {val.alarmTime}
+                                        {/* 2023-11-24 10:45:58 */}
+                                      </div>
+                                    </div>
+                                  </div>
                                   {/* )} */}
                                   {/* {activeTabs === 'tab2' && (
                                     <div>
@@ -714,7 +723,10 @@ const Home = () => {
                                 </div>
                               </div>
                               <div className="tab-button">
-                                <div className="tab-button-text" style={{color:alarmLeves[val.state]}}>
+                                <div
+                                  className="tab-button-text"
+                                  style={{ color: alarmLeves[val.state] }}
+                                >
                                   {val.state}
                                 </div>
                                 <button
