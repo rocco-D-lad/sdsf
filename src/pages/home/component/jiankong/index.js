@@ -6,12 +6,14 @@ import { CaretDownOutlined } from '@ant-design/icons'
 import imgsrc from '../../../../assets/styles/images/icon_sc.png'
 import { Listlieb } from '../../../../api/home'
 import icon_jk from '../../../../assets/styles/images/icon_jk.png'
-import icon_jkCancel from '../../../../assets/styles/images/icon_sc_2.png'
+import icon_jkCancel from '../../../../assets/styles/images/icon_sc_2_1.png'
 import imgxz from '../../../../assets/styles/images/img-xz.png'
+import icon_wxz from '../../../../assets/styles/images/icon_wxz_1.png'
 import { DownOutlined } from '@ant-design/icons'
 // import { canmeraList } from '../../../../app/store'
 import axios from 'axios'
 import { getApi } from '../../../../pages/home'
+import { color } from 'echarts'
 
 const Jiankong = () => {
   const api = getApi()
@@ -68,7 +70,7 @@ const Jiankong = () => {
   const ontoggle = async (value) => {
     console.log(value, '1111')
     // debugger
-    const isLike = value.is_like
+    const isLike = value?.is_like
     if (isLike) {
       const Updatedata = await axios({
         url: `${api.baseURL}/device/camera/update`,
@@ -127,7 +129,7 @@ const Jiankong = () => {
         const titleNode = (
           <span>
             {beforeStr}
-            <span style={{ background: 'red' }}>{searchValue}</span>
+            <span style={{ background: '#1496B9' }}>{searchValue}</span>
             {afterStr}
           </span>
         )
@@ -148,10 +150,27 @@ const Jiankong = () => {
             value={item}
             title={
               <div className="list-img-flex">
-                <div className="list-img-icon-jk">
+                {/* <div className="list-img-icon-jk">
                   <img src={icon_jk}></img>
-                </div>
-                <div className="list-text-icon-buttom">{titleNode}</div>
+                </div> */}
+                {item.on_map ? (
+                  <div>
+                    <div className="list-img-icon-jk">
+                      <img src={icon_jk}></img>
+                    </div>
+                    <div className="list-text-icon-buttom-white">
+                      {titleNode}
+                    </div>
+                  </div>
+                ) : (
+                  <div>
+                    <div className="list-img-icon-jk">
+                      <img src={icon_wxz}></img>
+                    </div>
+                    <div className="list-text-icon-buttom">{titleNode}</div>
+                  </div>
+                )}
+                {/* <div className="list-text-icon-buttom">{titleNode}</div> */}
                 <div>
                   {item.is_like ? (
                     <img
@@ -192,10 +211,21 @@ const Jiankong = () => {
           key={key}
           title={
             <div className="list-img-flex">
-              <div className="list-img-icon-jk">
-                <img src={icon_jk}></img>
-              </div>
-              <div className="list-text-icon-buttom">{title}</div>
+              {item.on_map ? (
+                <div>
+                  <div className="list-img-icon-jk">
+                    <img src={icon_jk}></img>
+                  </div>
+                  <div className="list-text-icon-buttom-white">{title}</div>
+                </div>
+              ) : (
+                <div>
+                  <div className="list-img-icon-jk">
+                    <img src={icon_wxz}></img>
+                  </div>
+                  <div className="list-text-icon-buttom">{title}</div>
+                </div>
+              )}
               <div>
                 {item.is_like ? (
                   <img
@@ -308,9 +338,9 @@ const Jiankong = () => {
     const results = cameraListData.filter((item) =>
       matchedKeys.includes(item.key)
     )
-    console.log(results,'results');
+    console.log(results, 'results')
     setSearchResults(results)
-     // if (searchResults.length > 0 && resultRef.current) {
+    // if (searchResults.length > 0 && resultRef.current) {
     //   console.log(resultRef, 'resultRef')
     //   resultRef.current.scrollIntoView({
     //     behavior: 'smooth',
@@ -368,14 +398,11 @@ const Jiankong = () => {
 
   useEffect(() => {
     cameralist()
-    // if (searchResults.length > 0 && resultRef.current) {
-    //   console.log(resultRef, 'resultRef')
-    //   resultRef.current.scrollIntoView({
-    //     behavior: 'smooth',
-    //     block: 'center'
-    //   })
-    // }
   }, [searchResults])
+
+  useEffect(() => {
+    setExpandedKeys()
+  }, [])
 
   return (
     <div id="round-Supervisory">
@@ -427,12 +454,17 @@ const Jiankong = () => {
                     }
                     // defaultExpandedKeys={['0-0-1-0']}
                     defaultExpandedKeys={['0-0-0-0']}
-                    // defaultExpandAll 
-                    ref={resultRef}
+                    defaultExpandAll
+                    // ref={resultRef}
                     onSelect={onSelect}
                     onExpand={onExpand}
-                    expandedKeys={expandedKeys}
-                    autoExpandParent={autoExpandParent}
+                    // expandedKeys={expandedKeys}
+                    defaultExpandParent={true}
+                    expandedKeys={
+                      expandedKeys?.length > 0 ? expandedKeys : ['1']
+                    }
+                    // treeData={data}
+                    // autoExpandParent={autoExpandParent}
                   >
                     {/* {mapList(pageData[0])} */}
                     {/* {console.log('1111111')} */}
@@ -460,8 +492,29 @@ const Jiankong = () => {
                       <li className="Collect-number" key={index}>
                         {index + 1}
                       </li>
-                      <li className="Collect-camera-img"></li>
-                      <li className="Collect-text">{val.camera_name}</li>
+                      {val.on_map ? (
+                        <li>
+                          <li className="Collect-camera-img"></li>
+                          <li
+                            className="Collect-text"
+                            style={{ color: '#ACFAFF' }}
+                          >
+                            {val.camera_name}
+                          </li>
+                        </li>
+                      ) : (
+                        <li>
+                          <li className="Collect-camera-img-gray"></li>
+                          <li
+                            className="Collect-text"
+                            style={{ color: 'white ' }}
+                          >
+                            {val.camera_name}
+                          </li>
+                        </li>
+                      )}
+                      {/* <li className="Collect-camera-img"></li> */}
+                      {/* <li className="Collect-text">{val.camera_name}</li> */}
                       <li
                         className="Collect-Star-img"
                         onClick={() => handleClickimgs(index)}

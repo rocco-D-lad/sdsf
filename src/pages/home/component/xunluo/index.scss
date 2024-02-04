@@ -78,6 +78,8 @@
           font-size: px2vmin(16px);
           color: white;
           flex-grow: 1;
+          text-align: center;
+          line-height: px2vmin(39px);
         }
       }
 
@@ -100,7 +102,7 @@
           margin: 0;
         }
         .inspect-one:hover {
-          cursor: pointer;
+          // cursor: pointer;
           width: px2vmin(438px);
           height: px2vmin(46px);
           background-color: #e9e9e9;
@@ -146,7 +148,7 @@
             height: px2vmin(22px);
             margin-right: px2vmin(26px);
             text-align: center;
-            cursor: pointer;
+            // cursor: pointer;
             color: white;
             background: url(../../../../assets/styles/images/btn_look2.png) center
               center no-repeat;
@@ -154,7 +156,7 @@
             font-size: px2vmin(12px);
           }
           .inspect-one:hover {
-            cursor: pointer;
+            // cursor: pointer;
             width: px2vmin(438px);
             height: px2vmin(46px);
             background-color: #e9e9e9;
@@ -191,7 +193,7 @@
               width: px2vmin(44px);
               height: px2vmin(22px);
               margin-right: px2vmin(26px);
-              cursor: pointer;
+              // cursor: pointer;
               color: white;
               background: url(../../../../assets/styles/images/btn_look2.png) center
                 center no-repeat;
@@ -217,7 +219,7 @@
           background-size: 100%;
           line-height: 30px;
           text-align: center;
-          cursor: pointer;
+          // cursor: pointer;
           border-radius: 2px;
         }
       }

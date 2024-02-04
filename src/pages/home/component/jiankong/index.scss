@@ -38,7 +38,7 @@
         center no-repeat;
       background-size: 100%;
       // position: absolute;
-      color: white;
+      color: #2DFFF2;
       border: none;
       background-color: transparent;
       cursor: pointer;
@@ -49,7 +49,6 @@
       height: px2vmin(32px);
       background: url(../../../../assets/styles/images/btn_gaun_1.png) center
         center no-repeat;
-      background-color: pink;
       background-size: 100%;
       color: white;
       cursor: pointer;
@@ -150,6 +149,8 @@
   color: white;
   .Collect-list {
     display: flex;
+    margin-left: px2cmin(-10);
+    // margin-top: 9px;
     .Collect-number {
       width: px2vmin(20);
       height: px2vmin(20);
@@ -164,12 +165,22 @@
       margin-left: px2vmin(21);
       margin-top: px2vmin(2);
     }
+    .Collect-camera-img-gray {
+      width: px2vmin(16.67px);
+      height: px2vmin(16.25px);
+      background: url(../../../../assets/styles/images/icon_wxz_1.png) no-repeat;
+      background-size: 100%;
+      margin-left: px2vmin(21);
+      margin-top: px2vmin(2);
+    }
     .Collect-text {
-      margin-left: px2vmin(13);
+      margin-left: px2vmin(53);
+      margin-top: px2vmin(-17);
       width: px2vmin(210);
       height: px2vmin(25);
       // border: 1px red solid;
       overflow: hidden;
+      
       text-overflow: ellipsis;
       text-wrap: nowrap;
     }
@@ -196,9 +207,32 @@
     margin-top: px2vmin(-2);
   }
   .list-text-icon-buttom {
-    margin-left: px2vmin(10);
+    margin-left: px2vmin(40);
+    margin-top: px2vmin(-10);
     width: px2vmin(140);
     height: px2vmin(28) !important;
     overflow: hidden;
+    color: white ;
   }
+  .list-text-icon-buttom-white {
+    margin-left: px2vmin(40);
+    margin-top: px2vmin(-10);
+    width: px2vmin(140);
+    height: px2vmin(28) !important;
+    overflow: hidden;
+    color: #ACFAFF  ;
+  }
+}
+.ant-tree-node-selected{
+  width: 256px;
+  height: 27px;
+  background-color: transparent;
+  background-size: 100%;
+  color: white !important;
+  background: url(../../../../assets/styles//images/img-xz-1.png) !important;
+}
+.ant-tree .list-text-icon-buttom{
+  line-height: 31px;
+  overflow: hidden;
+  // line-height: px2vmin(31);
 }

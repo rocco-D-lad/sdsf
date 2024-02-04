@@ -4,7 +4,7 @@ import { api } from '../../../../api/config'
 import axios from 'axios'
 import { request, hooks, utils, Api } from 'tuyang-shared'
 import PatrolsRouteServiceClass from './PatrolsRouteServiceClass'
-import { message, Row, Space, Tabs } from 'antd'
+import { Button, message, Row, Space, Tabs } from 'antd'
 // import {useDispatch, useSelector} from 'react-redux';
 import {selectLeftPanelVisible, setLeftPanelVisible} from "../../../../app/appSlice";
 import * as turf from '@turf/turf'
@@ -69,8 +69,10 @@ const Xunluo = () => {
   const [lineVisible, setLineVisible] = useState(true)
   const [videoAreaVisible, setVideoAreaVisible] = useState(false)
   const [videoPosVisible, setVideoPosVisible] = useState(false)
+  const [buttonDisabled, setButtonDisabled] = useState(false);
   const [status, setStatus] = useState(false)
   const [state, setState] = useState(true)
+  const [currentPatrolInfo,setCurrentPatrolInfo] = useState(-1)
   const { run: getPatrolsList, cancel: getPatrolsListCancel } =
     hooks.useRequest()
   const { run: getPatrolsHistoryList, cancel: getPatrolsHistoryListCancel } =
@@ -99,6 +101,8 @@ const Xunluo = () => {
   const [patrolbtnshow, setpatrolbtnshow] = useState(false) //巡更开始结束按钮
   const [errorReportVisible, setErrorReportVisible] = useState(false);
   // const dispatch = useDispatch();
+
+
 
   useEffect(() => {
     if (window.$viewer) {
@@ -378,17 +382,19 @@ const Xunluo = () => {
     // dispatch(setLeftPanelVisible(false));
 
   }
+
   /*查看按钮点击事件*/
   const PatrolClick = async (x, i) => {
-    // console.log(x, i, '点击的信息')
+    // setCurrentPatrolInfo(i)
+    setButtonDisabled(true);
+    console.log(x, i, '点击的信息')
     setStatus((status) => !status)
 
     setpatrolbtnshow(true)
     if (xlStateRef.current === PatrolEnum.STOP) {
       // 没有巡逻
       // 添加元素
-      await startXL(i)
-      // await onPlayRouteEnd();
+      await startXL(x)
     } else {
       // 正在巡逻
       patrolStopFuncRef.current()
@@ -656,31 +662,17 @@ const Xunluo = () => {
                   <p className="img"></p>
                   <p className="Controls-Seriall">{index + 1}</p>
                   <p className="Controls-routel">{ite.line_name}</p>
-                  <p
+                  <Button
+                  id='view-button'
                     className="Controls-Controlss"
-                    onClick={() => {
-                      PatrolClick(ite, index)
-                    }}
+                    onClick={() =>  PatrolClick(ite, index)}
+                    // disabled={currentPatrolInfo === -1? false : currentPatrolInfo !== index ? true : fa}
+                    style={{textAlign:"center"}}
+                    disabled={buttonDisabled}
                   >
-                    {xlStateRef.current !== PatrolEnum.STOP &&
-                    xlCurr?.id === ite.id
-                      ? '结束'
-                      : '查看'}
-                  </p>
+                    查看
+                  </Button>
                 </div>
-                // <div key={index} className="patroltest">
-                //   <span>{ite.line_name}</span>
-                //   <span
-                //     onClick={() => {
-                //       PatrolClick(ite, index)
-                //     }}
-                //   >
-                //           {xlStateRef.current !== PatrolEnum.STOP &&
-                //           xlCurr?.id === ite.id
-                //             ? '结束'
-                //             : '查看'}
-                //         </span>
-                // </div>
               )
             })}
         </div>
@@ -704,6 +696,7 @@ const Xunluo = () => {
           )}
 
           <div
+          id='exit-button'
             onClick={() => {
               PatrolClick(status)
             }}
